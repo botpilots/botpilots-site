@@ -1,10 +1,12 @@
+import image from "../assets/meinpolo_softend.png"
+
 const About = (props: { className: string }) => {
 	return (
 		<div className={props.className + ' flex gap-16 items-center'}>
 			{/* Image */}
 			<div className="flex flex-col py-4">
 				<div className="rounded-full border-8 border-double border-slate-700 h-48 w-48 overflow-hidden my-2">
-					<img src="./src/assets/meinpolo_softend.png" alt="Me in polo." className="scale-80 -translate-3" />
+					<img src={image} alt="Me in polo." className="scale-80 -translate-3" />
 				</div>
 			</div>
 			{/* Text */}

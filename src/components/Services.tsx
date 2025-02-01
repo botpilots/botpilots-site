@@ -1,10 +1,12 @@
+import image from '../assets/services_stock.jpg';
+
 const Services = (props: { className: string }) => {
 	return (
 		<div className={props.className + ' flex gap-16 items-center'}>
 			{/* Image */}
 			<div className="flex flex-col py-2">
 				<div className="border-8 border-double border-slate-700 my-2">
-					<img src="./src/assets/services_stock.jpg" alt="Man sitting at computer." width={800} />
+					<img src={image} alt="Man sitting at computer." width={800} />
 				</div>
 			</div>
 			{/* Text */}
