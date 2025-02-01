@@ -7,7 +7,8 @@
   font-weight: 300;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  --primary-color: rgba(255, 255, 255, 0.87);
+  color: var(--primary-color);
   background-color: #000000;
 
   font-synthesis: none;
@@ -15,6 +16,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Disable standard background color / color styling on form elements */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+	-webkit-text-fill-color: var(--primary-color) !important;
+}
+
 
 nav {
 	font-family: 'Share Tech', sans-serif;
@@ -45,11 +56,16 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #b9d5ff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+button:active {
+  background-color: #000000;
+  }
+
+#submitButton:disabled {
+  background-color: #b8b8b8;
+  cursor: not-allowed;
 }
 
 /* @media (prefers-color-scheme: light) {

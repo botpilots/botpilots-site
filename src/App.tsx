@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Portfolio from './components/Portfolio.tsx';
 import About from './components/About.tsx';
 import Services from './components/Services.tsx';
+import Form from './components/Form.tsx';
 
 function App() {
 
@@ -15,18 +16,15 @@ function App() {
 
 	// useState for currently active menu (fragment value).
 	const [displayedMenu, setDisplayedMenu] = useState('');
+	const [showForm, setShowForm] = useState(false);
 
 	// Array containing all menu types.
 	const menuTypes = ['services', 'portfolio', 'about'];
 
-	// Persist currentFragment in localStorage.
+	// Persist currentFragment and showForm in localStorage.
 	if (displayedMenu === '') {
 		const storedFragment = localStorage.getItem('currentFragment');
-		if (storedFragment) {
-			setDisplayedMenu(storedFragment);
-		} else {
-			setDisplayedMenu('home');
-		}
+		setDisplayedMenu(storedFragment || 'home');
 	}
 
 	// Store newly selected fragment in localStorage.
@@ -36,6 +34,11 @@ function App() {
 	const handleOnClick = (fragment: string) => {
 		setDisplayedMenu(fragment);
 	}
+
+	const handleContactUsClick = () => {
+		// Toggle the form visibility.
+		setShowForm(showForm === "true" ? "false" : "true");
+	};
 
 	return (
 		<div className='flex flex-col justify-between h-screen'>
@@ -69,10 +72,11 @@ function App() {
 					}
 				</section>
 			</main>
-			<footer className='flex justify-between items-center px-16 bg-slate-900 border-t border-slate-700'>
+			<footer className='flex justify-between items-center px-16 bg-slate-900 border-t border-slate-700 z-10'>
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots</p>
 				<span className='flex justify-center items-center gap-5 py-4'>
+					<button onClick={() => handleContactUsClick()} className='text-white'>Contact Us</button>
 					<a href='https://github.com/hulsbo'>
 						<img src={github} alt='GitHub' className='w-10 h-10' />
 					</a>
@@ -84,6 +88,9 @@ function App() {
 					</a>
 				</span>
 			</footer>
+			<div className={`fixed bottom-19 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 transition-transform duration-500 ${showForm ? 'translate-y-0' : 'translate-y-full'} overflow-hidden`}>
+				<Form setShowForm={setShowForm}/>
+			</div>
 		</div>
 	);
 }
