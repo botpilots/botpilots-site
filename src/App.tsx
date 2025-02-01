@@ -24,7 +24,7 @@ function App() {
 	// Persist currentFragment and showForm in localStorage.
 	if (displayedMenu === '') {
 		const storedFragment = localStorage.getItem('currentFragment');
-		setDisplayedMenu(storedFragment || 'home');
+		setDisplayedMenu(storedFragment || 'services');
 	}
 
 	// Store newly selected fragment in localStorage.
