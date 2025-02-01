@@ -25,7 +25,7 @@ const Form: React.FC<FormProps> = (props) => {
 
 		fetch(`https://u49qqrfugd.execute-api.eu-west-1.amazonaws.com/Prod/send?${queryParams}`, {
 			method: 'POST',
-			mode: 'no-cors',
+			mode: 'cors',
 		})
 			.then((response) => {
 				console.log(response);
