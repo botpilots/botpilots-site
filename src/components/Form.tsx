@@ -17,15 +17,19 @@ const Form: React.FC<FormProps> = (props) => {
 		submitButton.textContent = 'Sending...';
 		submitButton.disabled = true;
 
-		const queryParams = new URLSearchParams({
+		const requestBody = {
 			sender: form.sender.value,
 			subject: form.subject.value,
 			body: form.body.value,
-		}).toString();
+		};
 
-		fetch(`https://u49qqrfugd.execute-api.eu-west-1.amazonaws.com/Prod/send?${queryParams}`, {
+		fetch(`https://ogiuf6ebhj.execute-api.eu-west-1.amazonaws.com/Prod/send/`, {
 			method: 'POST',
 			mode: 'cors',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(requestBody),
 		})
 			.then((response) => {
 				console.log(response);
