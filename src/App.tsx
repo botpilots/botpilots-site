@@ -37,7 +37,7 @@ function App() {
 
 	const handleContactUsClick = () => {
 		// Toggle the form visibility.
-		setShowForm(showForm === "true" ? "false" : "true");
+		setShowForm(showForm ? false : true);
 	};
 
 	return (
