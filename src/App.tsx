@@ -15,6 +15,7 @@ function App() {
 	const headerWidth = '150px';
 
 	// useState for currently active menu (fragment value).
+	// TODO: consier removing this state, as it is not used.
 	const [displayedMenu, setDisplayedMenu] = useState('');
 	const [showForm, setShowForm] = useState(false);
 
@@ -48,7 +49,7 @@ function App() {
 					<ul className='flex gap-16 text-2xl my-8 text-[#3465a4]'>
 						{menuTypes.map((fragment) => (
 							<li key={fragment}>
-								<a  href={`#${fragment}`}
+								<a href={`#${fragment}`}
 									className='transition-colors hover:text-[#204a87] cursor-pointer'
 									onClick={() => handleOnClick(fragment)}
 								>
@@ -59,18 +60,18 @@ function App() {
 					</ul>
 				</nav>
 			</header>
-			<main className='fixed top-24 bottom-24 w-screen overflow-y-scroll hide-scrollbar'>
+			<main className='fixed top-24 bottom-24 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar'>
 				{
 					// Display content based on currentFragment, rendering the corresponding component.
 					<div className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth hide-scrollbar">
 						<div className='snap-center w-full p-16' id="services">
-							<Services className='w-screen max-w-full'/>
+							<Services className='w-screen max-w-full' />
 						</div>
 						<div className='snap-center w-full p-16' id='portfolio'>
-							<Portfolio className='w-screen max-w-full'/>
+							<Portfolio className='w-screen max-w-full' />
 						</div>
 						<div className='snap-center w-full p-16' id='about'>
-							<About className='w-screen max-w-full'/>
+							<About className='w-screen max-w-full' />
 						</div>
 					</div>
 				}
