@@ -58,7 +58,6 @@ function App() {
 						))}
 					</ul>
 				</nav>
-				<div style={{ width: headerWidth }}></div>
 			</header>
 			<main className='flex flex-col justify-center items-center'>
 				<section className='flex flex-col justify-start items-center gap-5 w-3/5 text-[#b9d5ff] h-48'>
