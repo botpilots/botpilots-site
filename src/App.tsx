@@ -42,7 +42,7 @@ function App() {
 
 	return (
 		<div className='flex flex-col justify-between h-screen'>
-			<header className='flex justify-between items-between px-16 bg-slate-900 border-b border-slate-700 flex-wrap'>
+			<header className='fixed h-24 top-0 w-full flex justify-between items-between px-16 bg-slate-900 border-b border-slate-700 flex-wrap'>
 				<img src={logo} alt='Botpilots Logo' width={headerWidth} className='mb-2' />
 				<nav className='flex justify-center items-center'>
 					<ul className='flex gap-16 text-2xl my-8 text-[#3465a4]'>
@@ -59,19 +59,17 @@ function App() {
 					</ul>
 				</nav>
 			</header>
-			<main className='flex flex-col justify-center items-center'>
-				<section className='flex flex-col justify-start items-center gap-5 w-3/5 text-[#b9d5ff] h-48'>
-					{
-						// Display content based on currentFragment, rendering the corresponding component.
-						<div className='relative w-full h-full'>
-							<Services className={`absolute inset-0 transition-opacity duration-300 ${displayedMenu === 'services' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
-							<Portfolio className={`absolute inset-0 transition-opacity duration-300 ${displayedMenu === 'portfolio' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
-							<About className={`absolute inset-0 transition-opacity duration-300 ${displayedMenu === 'about' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
-						</div>
-					}
-				</section>
+			<main className='fixed inset-24 overflow-y-scroll hide-scrollbar'>
+				{
+					// Display content based on currentFragment, rendering the corresponding component.
+					<>
+						<Services className={`transition-opacity duration-300 ${displayedMenu === 'services' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
+						<Portfolio className={`transition-opacity duration-300 ${displayedMenu === 'portfolio' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
+						<About className={`transition-opacity duration-300 ${displayedMenu === 'about' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
+					</>
+				}
 			</main>
-			<footer className='flex justify-between items-center px-16 bg-slate-900 border-t border-slate-700 z-10'>
+			<footer className='fixed bottom-0 w-full h-24 flex justify-between items-center px-16 bg-slate-900 border-t border-slate-700 z-10'>
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots</p>
 				<span className='flex justify-center items-center gap-5 py-4'>
@@ -88,7 +86,7 @@ function App() {
 				</span>
 			</footer>
 			<div className={`fixed bottom-19 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 transition-transform duration-500 ${showForm ? 'translate-y-0' : 'translate-y-full'} overflow-hidden`}>
-				<Form setShowForm={setShowForm}/>
+				<Form setShowForm={setShowForm} />
 			</div>
 		</div>
 	);

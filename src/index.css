@@ -7,7 +7,7 @@
   font-weight: 300;
 
   color-scheme: light dark;
-  --primary-color: rgba(255, 255, 255, 0.87);
+  --primary-color: #b9d5ff;
   color: var(--primary-color);
   background-color: #000000;
 
@@ -68,6 +68,16 @@ button:active {
   background-color: #b8b8b8;
   cursor: not-allowed;
 }
+
+/* Hide scrollbar for webkit browsers */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for firefox */
+html {
+	scrollbar-width: none; 
+  }
 
 /* @media (prefers-color-scheme: light) {
   :root {
