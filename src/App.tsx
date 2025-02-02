@@ -48,25 +48,31 @@ function App() {
 					<ul className='flex gap-16 text-2xl my-8 text-[#3465a4]'>
 						{menuTypes.map((fragment) => (
 							<li key={fragment}>
-								<p
+								<a  href={`#${fragment}`}
 									className='transition-colors hover:text-[#204a87] cursor-pointer'
 									onClick={() => handleOnClick(fragment)}
 								>
 									{fragment.replace(/-/g, ' ')}
-								</p>
+								</a>
 							</li>
 						))}
 					</ul>
 				</nav>
 			</header>
-			<main className='fixed inset-24 overflow-y-scroll hide-scrollbar'>
+			<main className='fixed top-24 bottom-24 w-screen overflow-y-scroll hide-scrollbar'>
 				{
 					// Display content based on currentFragment, rendering the corresponding component.
-					<>
-						<Services className={`transition-opacity duration-300 ${displayedMenu === 'services' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
-						<Portfolio className={`transition-opacity duration-300 ${displayedMenu === 'portfolio' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
-						<About className={`transition-opacity duration-300 ${displayedMenu === 'about' ? 'ease-in delay-300 opacity-100' : 'ease-out opacity-0'}`} />
-					</>
+					<div className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth hide-scrollbar">
+						<div className='snap-center w-full p-16' id="services">
+							<Services className='w-screen max-w-full'/>
+						</div>
+						<div className='snap-center w-full p-16' id='portfolio'>
+							<Portfolio className='w-screen max-w-full'/>
+						</div>
+						<div className='snap-center w-full p-16' id='about'>
+							<About className='w-screen max-w-full'/>
+						</div>
+					</div>
 				}
 			</main>
 			<footer className='fixed bottom-0 w-full h-24 flex justify-between items-center px-16 bg-slate-900 border-t border-slate-700 z-10'>
@@ -85,7 +91,7 @@ function App() {
 					</a>
 				</span>
 			</footer>
-			<div className={`fixed bottom-19 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 transition-transform duration-500 ${showForm ? 'translate-y-0' : 'translate-y-full'} overflow-hidden`}>
+			<div className={`fixed bottom-24 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 transition-transform duration-500 ${showForm ? 'translate-y-0' : 'translate-y-full'} overflow-hidden`}>
 				<Form setShowForm={setShowForm} />
 			</div>
 		</div>

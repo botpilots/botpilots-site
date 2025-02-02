@@ -76,6 +76,7 @@ button:active {
 
 /* Hide scrollbar for firefox */
 html {
+	scroll-behavior: smooth;
 	scrollbar-width: none; 
   }
 
