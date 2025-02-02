@@ -59,10 +59,9 @@ function App() {
 					</ul>
 				</nav>
 			</header>
-			<main className='fixed lg:top-24 top-40 bottom-24 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar'>
+			<main className='fixed lg:top-24 top-60 bottom-24 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar'>
 				{
 					// Display content based on currentFragment, rendering the corresponding component.
-
 					<div className="flex overflow-x-auto snap-x snap-mandatory w-screen hide-scrollbar scroll-smooth">
 						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
 							<div className="max-w-[800px] w-full p-8" id="services">
