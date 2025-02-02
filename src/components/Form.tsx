@@ -6,6 +6,8 @@ interface FormProps {
 
 const Form: React.FC<FormProps> = (props) => {
 
+	const submitButtonLabel = "Send Mail";
+
 	const handleSubmit = (e: React.FormEvent) => {
 
 		e.preventDefault();
@@ -17,6 +19,7 @@ const Form: React.FC<FormProps> = (props) => {
 		const submitButton = document.getElementById('submitButton') as HTMLButtonElement;
 		submitButton.textContent = 'Sending...';
 		submitButton.disabled = true;
+
 
 		const requestBody = {
 			sender: form.sender.value,
@@ -43,7 +46,7 @@ const Form: React.FC<FormProps> = (props) => {
 				} 
 				// Handle successful response
 				else {
-					createBtnBehaviour(submitButton, 'Success', 'background-color: green;', false, 2000);
+					createBtnBehaviour(submitButton, 'Mail delivered - we get back to you shortly!', 'background-color: green;', false, 2000);
 				}
 			})
 			// Handle network errors
@@ -63,7 +66,7 @@ const Form: React.FC<FormProps> = (props) => {
 	 * @param ms - The duration in milliseconds before resetting the button to its original state.
 	 * @param resetLabel - The label to reset the button to. Default is 'Submit'.
 	 */
-		const createBtnBehaviour = (button: HTMLButtonElement, msg: string, styles: string, showForm: boolean, ms: number,  resetLabel?: string) => {
+		const createBtnBehaviour = (button: HTMLButtonElement, msg: string, styles: string, showForm: boolean, ms: number) => {
 			
 			const orgStyles = button.getAttribute('style') || "";
 
@@ -75,7 +78,7 @@ const Form: React.FC<FormProps> = (props) => {
 			setTimeout(() => {
 				button.style = orgStyles
 				button.disabled = false;
-				button.textContent = resetLabel || 'Submit';
+				button.textContent = submitButtonLabel;
 			}, ms);
 		
 			// Hide the form after some more time
@@ -126,8 +129,10 @@ const Form: React.FC<FormProps> = (props) => {
 							<button
 								id="submitButton"
 								type="submit"
+								style={{transition: 'background-color 0.3s', width: '100%'}}
+
 							>
-								Submit
+								{submitButtonLabel}
 							</button>
 						</div>
 					</form>

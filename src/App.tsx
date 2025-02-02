@@ -76,7 +76,7 @@ function App() {
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots</p>
 				<span className='flex justify-center items-center gap-5 py-4'>
-					<button onClick={() => handleContactUsClick()} className='text-white'>Contact Us</button>
+					<button onClick={() => handleContactUsClick()}>Contact Us</button>
 					<a href='https://github.com/hulsbo'>
 						<img src={github} alt='GitHub' className='w-10 h-10' />
 					</a>
