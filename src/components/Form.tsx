@@ -43,7 +43,7 @@ const Form: React.FC<FormProps> = (props) => {
 					} else {
 						createBtnBehaviour(submitButton, 'Server error', 'background-color: red;', true, 2000);
 					}
-				} 
+				}
 				// Handle successful response
 				else {
 					createBtnBehaviour(submitButton, 'Mail delivered - we get back to you shortly!', 'background-color: green;', false, 2000);
@@ -66,26 +66,26 @@ const Form: React.FC<FormProps> = (props) => {
 	 * @param ms - The duration in milliseconds before resetting the button to its original state.
 	 * @param resetLabel - The label to reset the button to. Default is 'Submit'.
 	 */
-		const createBtnBehaviour = (button: HTMLButtonElement, msg: string, styles: string, showForm: boolean, ms: number) => {
-			
-			const orgStyles = button.getAttribute('style') || "";
+	const createBtnBehaviour = (button: HTMLButtonElement, msg: string, styles: string, showForm: boolean, ms: number) => {
 
-			// Modify style and text
-			button.style = orgStyles + styles;
-			button.textContent = msg;
-	
-			// Reset button to original appearance after some time
-			setTimeout(() => {
-				button.style = orgStyles
-				button.disabled = false;
-				button.textContent = submitButtonLabel;
-			}, ms);
-		
-			// Hide the form after some more time
-			if (!showForm) {
-				setTimeout(() => props.setShowForm(showForm), ms + 100);
-			}
-		};
+		const orgStyles = button.getAttribute('style') || "";
+
+		// Modify style and text
+		button.setAttribute('style', orgStyles + styles);
+		button.textContent = msg;
+
+		// Reset button to original appearance after some time
+		setTimeout(() => {
+			button.setAttribute('style', orgStyles);
+			button.disabled = false;
+			button.textContent = submitButtonLabel;
+		}, ms);
+
+		// Hide the form after some more time
+		if (!showForm) {
+			setTimeout(() => props.setShowForm(showForm), ms + 100);
+		}
+	};
 
 	return (
 		<>
@@ -129,7 +129,7 @@ const Form: React.FC<FormProps> = (props) => {
 							<button
 								id="submitButton"
 								type="submit"
-								style={{transition: 'background-color 0.3s', width: '100%'}}
+								style={{ transition: 'background-color 0.3s', width: '100%' }}
 
 							>
 								{submitButtonLabel}
