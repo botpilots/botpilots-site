@@ -63,18 +63,18 @@ function App() {
 				{
 					// Display content based on currentFragment, rendering the corresponding component.
 
-					<div className="flex overflow-x-auto snap-x snap-mandatory w-screen hide-scrollbar scroll-smooth">
+					<div className="max-h-full flex overflow-x-auto snap-x snap-mandatory w-screen hide-scrollbar scroll-smooth">
 						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
-							<div className="max-w-[800px] w-full p-8" id="services">
+							<div className="max-h-full max-w-[800px] w-full p-8" id="services">
 								<Services className='' />
 							</div>
 						</section>
-						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
-							<div className="max-w-[800px] w-full p-8" id="portfolio">
+						<section className="max-h-full snap-center flex-shrink-0 w-screen flex items-center justify-center">
+							<div className="max-w-[800px] w-full px-8" id="portfolio">
 								<Portfolio className='' />
 							</div>
 						</section>
-						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
+						<section className="max-h-full snap-center flex-shrink-0 w-screen flex items-center justify-center">
 							<div className="max-w-[800px] w-full p-8" id="about">
 								<About className='' />
 							</div>
