@@ -11,9 +11,6 @@ import Form from './components/Form.tsx';
 
 function App() {
 
-	// Width of the header logo.
-	const headerWidth = '150px';
-
 	// useState for currently active menu (fragment value).
 	// TODO: consier removing this state, as it is not used.
 	const [displayedMenu, setDisplayedMenu] = useState('');
@@ -43,10 +40,12 @@ function App() {
 
 	return (
 		<div className='flex flex-col justify-between h-screen'>
-			<header className='fixed h-24 top-0 w-full flex justify-between items-between px-16 bg-slate-900 border-b border-slate-700 flex-wrap'>
-				<img src={logo} alt='Botpilots Logo' width={headerWidth} className='mb-2' />
-				<nav className='flex justify-center items-center'>
-					<ul className='flex gap-16 text-2xl my-8 text-[#3465a4]'>
+			<header className='lg:flex lg:justify-between items-center fixed top-0 w-full px-[5%] bg-slate-900 border-b border-slate-700'>
+				<div className='lg:none flex justify-center items-center lg:mt-0 mt-4'>
+					<img src={logo} alt='Botpilots Logo' className='lg:w-36 w-32' />
+				</div>
+				<nav className='flex justify-center'>
+					<ul className='flex justify-center gap-8 text-2xl my-8 text-[#3465a4] w-full'>
 						{menuTypes.map((fragment) => (
 							<li key={fragment}>
 								<a href={`#${fragment}`}
@@ -60,7 +59,7 @@ function App() {
 					</ul>
 				</nav>
 			</header>
-			<main className='fixed top-24 bottom-24 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar'>
+			<main className='fixed lg:top-24 top-40 bottom-24 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar'>
 				{
 					// Display content based on currentFragment, rendering the corresponding component.
 
@@ -83,19 +82,19 @@ function App() {
 					</div>
 				}
 			</main >
-			<footer className='fixed bottom-0 w-full h-24 flex justify-between items-center px-16 bg-slate-900 border-t border-slate-700 z-10'>
+			<footer className='fixed bottom-0 w-full h-24 flex justify-between items-center px-[5%] bg-slate-900 border-t border-slate-700 z-10 lg:text-sm text-xs'>
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots</p>
 				<span className='flex justify-center items-center gap-5 py-4'>
 					<button onClick={() => handleContactUsClick()}>Contact Us</button>
 					<a href='https://github.com/hulsbo'>
-						<img src={github} alt='GitHub' className='w-10 h-10' />
+						<img src={github} alt='GitHub' className='lg:w-10 lg:h-10 w-6 h-6' />
 					</a>
 					<a href='https://www.linkedin.com/in/oskar-huledal/'>
-						<img src={linkedin} alt='LinkedIn' className='w-10 h-10' />
+						<img src={linkedin} alt='LinkedIn' className='lg:w-10 lg:h-10 w-6 h-6' />
 					</a>
 					<a href='https://maps.google.com/?q=57.70887,11.97&ll=51,1.8&z=5'>
-						<img src={location} alt='Location' className='w-10 h-10' />
+						<img src={location} alt='Location' className='lg:w-10 lg:h-10 w-6 h-6' />
 					</a>
 				</span>
 			</footer>
