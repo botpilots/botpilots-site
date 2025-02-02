@@ -63,19 +63,26 @@ function App() {
 			<main className='fixed top-24 bottom-24 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar'>
 				{
 					// Display content based on currentFragment, rendering the corresponding component.
-					<div className="flex overflow-x-scroll snap-x snap-mandatory scroll-smooth hide-scrollbar">
-						<div className='snap-center w-full p-16' id="services">
-							<Services className='w-screen max-w-full' />
-						</div>
-						<div className='snap-center w-full p-16' id='portfolio'>
-							<Portfolio className='w-screen max-w-full' />
-						</div>
-						<div className='snap-center w-full p-16' id='about'>
-							<About className='w-screen max-w-full' />
-						</div>
+
+					<div className="flex overflow-x-auto snap-x snap-mandatory w-screen hide-scrollbar scroll-smooth">
+						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
+							<div className="max-w-[800px] w-full p-8" id="services">
+								<Services className='' />
+							</div>
+						</section>
+						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
+							<div className="max-w-[800px] w-full p-8" id="portfolio">
+								<Portfolio className='' />
+							</div>
+						</section>
+						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
+							<div className="max-w-[800px] w-full p-8" id="about">
+								<About className='' />
+							</div>
+						</section>
 					</div>
 				}
-			</main>
+			</main >
 			<footer className='fixed bottom-0 w-full h-24 flex justify-between items-center px-16 bg-slate-900 border-t border-slate-700 z-10'>
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots</p>
@@ -95,8 +102,25 @@ function App() {
 			<div className={`fixed bottom-24 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 transition-transform duration-500 ${showForm ? 'translate-y-0' : 'translate-y-full'} overflow-hidden`}>
 				<Form setShowForm={setShowForm} />
 			</div>
-		</div>
+		</div >
 	);
 }
 
 export default App;
+
+
+
+<div className="flex overflow-x-auto snap-x snap-mandatory w-screen h-screen">
+	<section className="snap-center flex-shrink-0 w-screen h-screen flex items-center justify-center bg-red-500">
+		<div className="max-w-[800px] w-full px-4 bg-amber-50">
+			<Services className='w-screen max-w-full' />
+		</div>
+	</section>
+	<section className="snap-center flex-shrink-0 w-screen h-screen flex items-center justify-center bg-blue-500">
+		<div className="max-w-[800px] w-full px-4 bg-amber-50">
+			<Portfolio className='w-screen max-w-full' /></div>
+	</section>
+	<section className="snap-center flex-shrink-0 w-screen h-screen flex items-center justify-center bg-green-500">
+		<div className="max-w-[800px] w-full px-4 bg-amber-50">							<About className='w-screen max-w-full' /></div>
+	</section>
+</div>
