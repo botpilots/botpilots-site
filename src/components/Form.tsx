@@ -7,6 +7,7 @@ interface FormProps {
 const Form: React.FC<FormProps> = (props) => {
 
 	const handleSubmit = (e: React.FormEvent) => {
+
 		e.preventDefault();
 		const form = e.target as HTMLFormElement;
 		// Handle form submission logic here
@@ -31,36 +32,57 @@ const Form: React.FC<FormProps> = (props) => {
 			},
 			body: JSON.stringify(requestBody),
 		})
-			.then((response) => {
-				console.log(response);
-				submitButton.textContent = 'Success!';
-				submitButton.style.backgroundColor = 'green';
-
-				setTimeout(() => {
-					props.setShowForm(false); // Hide the form
-				}, 500);
-
-				resetSubmitButton(submitButton);
-
-				return response.json();
-			})
-			.catch((error) => {
-				// if too many requests
-				if (error.status === 429) {
-					console.error(error);
-					submitButton.textContent = 'Too many requests, try again later.';
-					submitButton.style.backgroundColor = 'red';
-
-					resetSubmitButton(submitButton);
-				} else {
-					console.error(error);
-					submitButton.textContent = 'Hm...failed to send';
-					submitButton.style.backgroundColor = 'red';
-					resetSubmitButton(submitButton);
+			.then(response => {
+				// Handle HTTP errors
+				if (!response.ok) {
+					if (response.status === 429) {
+						createBtnBehaviour(submitButton, 'Too many requests', 'background-color: red;', true, 2000);
+					} else {
+						createBtnBehaviour(submitButton, 'Server error', 'background-color: red;', true, 2000);
+					}
+				} 
+				// Handle successful response
+				else {
+					createBtnBehaviour(submitButton, 'Success', 'background-color: green;', false, 2000);
 				}
-				submitButton.disabled = false;
+			})
+			// Handle network errors
+			.catch((error) => {
+				console.error(error);
+				createBtnBehaviour(submitButton, 'Network error', 'background-color: red;', true, 2000);
 			});
 	};
+
+	/**
+	 * Updates the behavior of a submit button by changing its appearance and optionally hiding the form (e.g. at success).
+	 *
+	 * @param button - The submit button element to be modified.
+	 * @param msg - The message to display on the button.
+	 * @param color - New styles indicating status.
+	 * @param showForm - A boolean indicating whether to show or hide the form.
+	 * @param ms - The duration in milliseconds before resetting the button to its original state.
+	 * @param resetLabel - The label to reset the button to. Default is 'Submit'.
+	 */
+		const createBtnBehaviour = (button: HTMLButtonElement, msg: string, styles: string, showForm: boolean, ms: number,  resetLabel?: string) => {
+			
+			const orgStyles = button.getAttribute('style') || "";
+
+			// Modify style and text
+			button.style = orgStyles + styles;
+			button.textContent = msg;
+	
+			// Reset button to original appearance after some time
+			setTimeout(() => {
+				button.style = orgStyles
+				button.disabled = false;
+				button.textContent = resetLabel || 'Submit';
+			}, ms);
+		
+			// Hide the form after some more time
+			if (!showForm) {
+				setTimeout(() => props.setShowForm(showForm), ms + 100);
+			}
+		};
 
 	return (
 		<>
@@ -104,7 +126,6 @@ const Form: React.FC<FormProps> = (props) => {
 							<button
 								id="submitButton"
 								type="submit"
-								className={`px-4 py-2 rounded text-white transition-colors`}
 							>
 								Submit
 							</button>
@@ -116,12 +137,8 @@ const Form: React.FC<FormProps> = (props) => {
 	);
 };
 
-const resetSubmitButton = (submitButton: HTMLButtonElement) => {
-	setTimeout(() => {
-		submitButton.textContent = 'Submit';
-		submitButton.style.backgroundColor = '';
-		submitButton.disabled = false;
-	}, 2000);
-};
+
+
+
 
 export default Form;
