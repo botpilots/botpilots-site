@@ -53,6 +53,7 @@ const Form: React.FC<FormProps> = (props) => {
 
 					resetSubmitButton(submitButton);
 				} else {
+					console.error(error);
 					submitButton.textContent = 'Hm...failed to send';
 					submitButton.style.backgroundColor = 'red';
 					resetSubmitButton(submitButton);
