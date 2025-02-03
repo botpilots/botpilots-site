@@ -25,9 +25,9 @@ function App() {
 
 	return (
 		<div className='flex flex-col justify-between h-screen'>
-			<header className='fixed top-0 w-full lg:h-16 px-[5%] lg:px-10 flex justify-between items-center bg-slate-900 border-b border-slate-700'>
-				<img src={logo} alt='Botpilots Logo' className='w-36 h-16' />
-				<ul className='flex justify-end gap-8 text-xl flex-wrap'>
+			<header className='fixed top-0 w-full h-16 px-[5%] lg:px-10 flex justify-between items-center bg-slate-900 border-b border-slate-700'>
+				<img src={logo} alt='Botpilots Logo' className='sm:w-36 w-24' />
+				<ul className='flex justify-end gap-[10%] sm:text-2xl text-sm'>
 					{menuTypes.map((fragment) => (
 						<li key={fragment}>
 							<a href={`#${fragment}`}
@@ -61,11 +61,11 @@ function App() {
 					</div>
 				}
 			</main >
-			<footer className='fixed bottom-0 w-full lg:h-16 flex justify-between items-center px-[5%] lg:px-10 bg-slate-900 border-t border-slate-700 z-10 text-sm flex-wrap'>
+			<footer className='fixed bottom-0 w-full h-16 flex justify-between items-center px-[5%] lg:px-10 bg-slate-900 border-t border-slate-700 z-10 lg:text-sm text-xs'>
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots AB</p>
 				<span className='flex justify-center items-center gap-5 py-4'>
-					<button onClick={() => handleContactUsClick()}>Contact Us</button>
+					<button onClick={() => handleContactUsClick()} className='h-8 text-nowrap'>email us</button>
 					<a href='https://github.com/hulsbo'>
 						<img src={github} alt='GitHub' className='w-8 h-8' />
 					</a>
