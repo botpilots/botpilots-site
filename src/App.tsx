@@ -77,7 +77,7 @@ function App() {
 					</a>
 				</span>
 			</footer>
-			<div className={`fixed bottom-24 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 transition-transform duration-500 ${showForm ? 'translate-y-0' : 'translate-y-full'} overflow-hidden`}>
+			<div className={`fixed h-1/2 bottom-1/4 left-1/8 w-3/4 transition-transform duration-1000 ${showForm ? 'translate-y-0' : 'translate-y-[200%]'}`}>
 				<Form setShowForm={setShowForm} />
 			</div>
 		</div >

@@ -56,6 +56,11 @@ button {
   transition: border-color 0.25s;
   color: var(--primary-color)
 }
+
+#submitButton {
+	padding: 0.6em 1.2em;
+}
+
 button:hover {
   border-color: #b9d5ff;
 }
