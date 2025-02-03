@@ -13,13 +13,10 @@ const About = (props: { className?: string }) => {
 			<div className="py-2 min-w-[250px] space-y-2">
 				<h2 className='text-4xl font-bold py-2 text-left'>About</h2>
 				<p className='text-lg text-left'>
-					Hello, I'm Oskar!
+					Hi, I'm Oskar. I founded BotPilots to combine my passion for coding with helping companies realize their web app visions.
 				</p>
 				<p className='text-lg text-left'>
-					I founded BotPilots to combine my passion for coding with helping companies realize their web app visions. I'm excited to offer you my expertise in implementing the web technologies of tomorrow.
-				</p>
-				<p className='text-lg text-left'>
-					Let's turn dreams into reality together!				</p>
+					I'm excited to offer you my expertise in implementing the web technologies of tomorrow. Let's turn dreams into reality together!				</p>
 				<div className="text-left py-2">
 					<p>Oskar Huledal - <i>Chief Bot Pilot & Founder</i></p>
 				</div>
