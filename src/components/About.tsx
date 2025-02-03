@@ -2,9 +2,9 @@ import image from "../assets/meinpolo_softend.png"
 
 const About = (props: { className?: string }) => {
 	return (
-		<div className={`${props.className} flex gap-8 items-center flex-wrap lg:flex-nowrap justify-center`}>
+		<div className={`${props.className} flex gap-8 items-center flex-wrap sm:flex-nowrap justify-center`}>
 			{/* Image */}
-			<div className="py-2 lg:mr-4">
+			<div className="py-2 sm:mr-4">
 				<div className="rounded-full border-8 border-double border-slate-700 h-48 w-48 overflow-hidden my-2">
 					<img src={image} alt="Me in polo." className="scale-80 -translate-3" />
 				</div>

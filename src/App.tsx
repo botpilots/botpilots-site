@@ -30,7 +30,7 @@ function App() {
 
 	return (
 		<div className='flex flex-col justify-between h-screen'>
-			<header className='fixed top-0 w-full h-16 px-[5%] lg:px-10 flex justify-between items-center bg-slate-900 border-b border-slate-700'>
+			<header className='fixed top-0 w-full h-16 px-[5%] sm:px-10 flex justify-between items-center bg-slate-900 border-b border-slate-700'>
 				<svg className='text-style sm:w-36 w-24' width="32mm" height="6.8mm" viewBox="0 0 34 4" xmlns="http://www.w3.org/2000/svg">
 					<text x="0" y="5">
 						<tspan className='bot-logo-part'>bot</tspan><tspan className='pilots-logo-part'>Pilots</tspan>
@@ -52,19 +52,19 @@ function App() {
 				{
 					// div container all horizontal sections. Theref
 					<div className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
-						<section id="services" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+						<section id="services" className="snap-center flex-shrink-0 w-screen flex sm:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
 							<Services />
 						</section>
-						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex sm:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
 							<Portfolio />
 						</section>
-						<section id="about" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+						<section id="about" className="snap-center flex-shrink-0 w-screen flex sm:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
 							<About />
 						</section>
 					</div>
 				}
 			</main >
-			<footer className='fixed bottom-0 w-full h-16 flex justify-between items-center px-[5%] lg:px-10 bg-slate-900 border-t border-slate-700 z-10 lg:text-sm text-xs'>
+			<footer className='fixed bottom-0 w-full h-16 flex justify-between items-center px-[5%] sm:px-10 bg-slate-900 border-t border-slate-700 z-10 sm:text-sm text-xs'>
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots AB</p>
 				<span className='flex justify-center items-center gap-5 py-4'>
