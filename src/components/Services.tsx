@@ -1,6 +1,6 @@
 import image from '../assets/services_stock.jpg';
 
-const Services = (props: { className: string }) => {
+const Services = (props: { className?: string }) => {
 	return (
 		<div className={props.className + ' flex gap-12 flex-wrap items-center'}>
 

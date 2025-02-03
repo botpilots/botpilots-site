@@ -91,10 +91,11 @@ const Form: React.FC<FormProps> = (props) => {
 		<>
 			{(
 				<div className="h-full inset-0 flex items-center justify-center text-[#b9d5ff] bg-slate-900 border-b-0 border-slate-700 py-6 px-8 rounded border-1">
-					<form onSubmit={handleSubmit} className="w-full flex flex-col space-y-4 h-full">
+					<form onSubmit={handleSubmit} className="h-full w-full flex flex-col space-y-4">
+						<h2 className="text-4xl font-bold text-center">Hit us up</h2>
 						<div className="flex flex-col">
 							<label htmlFor="email" className="text-left my-3">
-								Email:
+								Email (not stored or shared):
 							</label>
 							<input
 								type="email"

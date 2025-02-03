@@ -1,5 +1,5 @@
 import './App.css';
-import logo from './assets/logo.svg';
+
 import github from './assets/github.svg';
 import linkedin from './assets/linkedin.svg';
 import location from './assets/location.svg';
@@ -13,24 +13,14 @@ function App() {
 
 	// useState for currently active menu (fragment value).
 	// TODO: consier removing this state, as it is not used.
-	const [displayedMenu, setDisplayedMenu] = useState('');
 	const [showForm, setShowForm] = useState(false);
 
 	// Array containing all menu types.
 	const menuTypes = ['services', 'portfolio', 'about'];
 
-	// Persist currentFragment and showForm in localStorage.
-	if (displayedMenu === '') {
-		const storedFragment = localStorage.getItem('currentFragment');
-		setDisplayedMenu(storedFragment || 'services');
-	}
-
-	// Store newly selected fragment in localStorage.
-	localStorage.setItem('currentFragment', displayedMenu);
-
-	// Handle onClick event for menu items.
-	const handleOnClick = (fragment: string) => {
-		setDisplayedMenu(fragment);
+	// If hash is empty, set it to the first menu type.
+	if (!window.location.hash) {
+		window.location.hash = menuTypes[0];
 	}
 
 	const handleContactUsClick = () => {
@@ -40,65 +30,57 @@ function App() {
 
 	return (
 		<div className='flex flex-col justify-between h-screen'>
-			<header className='lg:flex lg:justify-between items-center fixed top-0 w-full px-[5%] bg-slate-900 border-b border-slate-700'>
-				<div className='lg:none flex justify-center items-center lg:mt-0 mt-4'>
-					<img src={logo} alt='Botpilots Logo' className='lg:w-36 w-32' />
-				</div>
-				<nav className='flex justify-center'>
-					<ul className='flex justify-center gap-8 text-2xl my-8 text-[#3465a4] w-full'>
-						{menuTypes.map((fragment) => (
-							<li key={fragment}>
-								<a href={`#${fragment}`}
-									className='transition-colors hover:text-[#204a87] cursor-pointer'
-									onClick={() => handleOnClick(fragment)}
-								>
-									{fragment.replace(/-/g, ' ')}
-								</a>
-							</li>
-						))}
-					</ul>
-				</nav>
+			<header className='fixed top-0 w-full h-16 px-[5%] lg:px-10 flex justify-between items-center bg-slate-900 border-b border-slate-700'>
+				<svg className='text-style sm:w-36 w-24' width="32mm" height="6.8mm" viewBox="0 0 34 4" xmlns="http://www.w3.org/2000/svg">
+					<text x="0" y="5">
+						<tspan className='bot-logo-part'>bot</tspan><tspan className='pilots-logo-part'>Pilots</tspan>
+					</text>
+				</svg>
+				<ul className='flex justify-end gap-[10%] sm:text-2xl text-sm'>
+					{menuTypes.map((fragment) => (
+						<li key={fragment}>
+							<a href={`#${fragment}`}
+								className='transition-colors hover:text-[#204a87] cursor-pointer'
+							>
+								{fragment.replace(/-/g, ' ')}
+							</a>
+						</li>
+					))}
+				</ul>
 			</header>
-			<main className='fixed lg:top-24 top-40 bottom-24 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar'>
+			<main className='fixed top-16 bottom-16 w-screen'>
 				{
-					// Display content based on currentFragment, rendering the corresponding component.
-
-					<div className="max-h-full flex overflow-x-auto snap-x snap-mandatory w-screen hide-scrollbar scroll-smooth">
-						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
-							<div className="max-h-full max-w-[800px] w-full p-8" id="services">
-								<Services className='' />
-							</div>
+					// div container all horizontal sections. Theref
+					<div className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+						<section id="services" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+							<Services />
 						</section>
-						<section className="max-h-full snap-center flex-shrink-0 w-screen flex items-center justify-center">
-							<div className="max-w-[800px] w-full px-8" id="portfolio">
-								<Portfolio className='' />
-							</div>
+						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+							<Portfolio />
 						</section>
-						<section className="max-h-full snap-center flex-shrink-0 w-screen flex items-center justify-center">
-							<div className="max-w-[800px] w-full p-8" id="about">
-								<About className='' />
-							</div>
+						<section id="about" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+							<About />
 						</section>
 					</div>
 				}
 			</main >
-			<footer className='fixed bottom-0 w-full h-24 flex justify-between items-center px-[5%] bg-slate-900 border-t border-slate-700 z-10 lg:text-sm text-xs'>
+			<footer className='fixed bottom-0 w-full h-16 flex justify-between items-center px-[5%] lg:px-10 bg-slate-900 border-t border-slate-700 z-10 lg:text-sm text-xs'>
 				<p className='text-[#b9d5ff]'>
-					&copy; 2025 Botpilots</p>
+					&copy; 2025 Botpilots AB</p>
 				<span className='flex justify-center items-center gap-5 py-4'>
-					<button onClick={() => handleContactUsClick()}>Contact Us</button>
+					<button onClick={() => handleContactUsClick()} className="h-8 w-26 text-nowrap">{showForm ? "close form" : "email us"}</button>
 					<a href='https://github.com/hulsbo'>
-						<img src={github} alt='GitHub' className='lg:w-10 lg:h-10 w-6 h-6' />
+						<img src={github} alt='GitHub' className='w-8 h-8' />
 					</a>
 					<a href='https://www.linkedin.com/in/oskar-huledal/'>
-						<img src={linkedin} alt='LinkedIn' className='lg:w-10 lg:h-10 w-6 h-6' />
+						<img src={linkedin} alt='LinkedIn' className='w-8 h-8' />
 					</a>
 					<a href='https://maps.google.com/?q=57.70887,11.97&ll=51,1.8&z=5'>
-						<img src={location} alt='Location' className='lg:w-10 lg:h-10 w-6 h-6' />
+						<img src={location} alt='Location' className='w-8 h-8' />
 					</a>
 				</span>
 			</footer>
-			<div className={`fixed bottom-24 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 transition-transform duration-500 ${showForm ? 'translate-y-0' : 'translate-y-full'} overflow-hidden`}>
+			<div className={`fixed sm:h-1/2 sm:top-1/4 sm:left-1/8 sm:w-3/4 left-0 bottom-16 top-16 w-full transition-transform duration-1000 ${showForm ? 'translate-y-0' : 'translate-y-[200%]'}`}>
 				<Form setShowForm={setShowForm} />
 			</div>
 		</div >
@@ -117,9 +99,12 @@ export default App;
 	</section>
 	<section className="snap-center flex-shrink-0 w-screen h-screen flex items-center justify-center bg-blue-500">
 		<div className="max-w-[800px] w-full px-4 bg-amber-50">
-			<Portfolio className='w-screen max-w-full' /></div>
+			<Portfolio className='w-screen max-w-full' />
+		</div>
 	</section>
 	<section className="snap-center flex-shrink-0 w-screen h-screen flex items-center justify-center bg-green-500">
-		<div className="max-w-[800px] w-full px-4 bg-amber-50">							<About className='w-screen max-w-full' /></div>
+		<div className="max-w-[800px] w-full px-4 bg-amber-50">
+			<About className='w-screen max-w-full' />
+		</div>
 	</section>
 </div>
