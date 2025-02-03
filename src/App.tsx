@@ -1,5 +1,5 @@
 import './App.css';
-import logo from './assets/logo.svg';
+
 import github from './assets/github.svg';
 import linkedin from './assets/linkedin.svg';
 import location from './assets/location.svg';
@@ -26,7 +26,11 @@ function App() {
 	return (
 		<div className='flex flex-col justify-between h-screen'>
 			<header className='fixed top-0 w-full h-16 px-[5%] lg:px-10 flex justify-between items-center bg-slate-900 border-b border-slate-700'>
-				<img src={logo} alt='Botpilots Logo' className='sm:w-36 w-24' />
+				<svg className='text-style sm:w-36 w-24' width="32mm" height="6.8mm" viewBox="0 0 34 4" xmlns="http://www.w3.org/2000/svg">
+					<text x="0" y="5">
+						<tspan className='bot-logo-part'>bot</tspan><tspan className='pilots-logo-part'>Pilots</tspan>
+					</text>
+				</svg>
 				<ul className='flex justify-end gap-[10%] sm:text-2xl text-sm'>
 					{menuTypes.map((fragment) => (
 						<li key={fragment}>

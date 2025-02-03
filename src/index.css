@@ -97,3 +97,30 @@ html {
     background-color: #f9f9f9;
   }
 } */
+
+/* Styles for logo */
+.text-style {
+	font-style: italic;
+	font-weight: 500;
+	font-size: 7.7611px;
+	font-family: Ubuntu;
+	user-select: none;
+	}
+	
+	.bot-logo-part {
+	fill: #b9d5ff;
+	}
+
+	.pilots-logo-part {
+	fill: #204a87;
+	}
+
+	.text-style:hover {
+		animation: squiggle 1.2s infinite;
+	}
+
+	@keyframes squiggle {
+		0% { transform: skewX(0deg); }
+		50% { transform: skewX(20deg); }
+		100% { transform: skewX(0deg); }
+	}
