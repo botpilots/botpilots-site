@@ -47,20 +47,14 @@ function App() {
 				{
 					// div container all horizontal sections. Theref
 					<div className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
-						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar">
-							<div className="max-h-full max-w-[800px] w-full p-8" id="services">
-								<Services className='' />
-							</div>
+						<section id="services" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+							<Services />
 						</section>
-						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar">
-							<div className="max-h-full max-w-[800px] w-full p-8" id="portfolio">
-								<Portfolio className='' />
-							</div>
+						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+							<Portfolio />
 						</section>
-						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar">
-							<div className="max-h-full max-w-[800px] w-full p-8" id="about">
-								<About className='' />
-							</div>
+						<section id="about" className="snap-center flex-shrink-0 w-screen flex lg:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
+							<About />
 						</section>
 					</div>
 				}
