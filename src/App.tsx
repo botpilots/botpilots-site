@@ -53,12 +53,12 @@ function App() {
 							</div>
 						</section>
 						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar">
-							<div className="max-w-[800px] w-full px-8" id="portfolio">
+							<div className="max-h-full max-w-[800px] w-full p-8" id="portfolio">
 								<Portfolio className='' />
 							</div>
 						</section>
 						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar">
-							<div className="max-w-[800px] w-full p-8" id="about">
+							<div className="max-h-full max-w-[800px] w-full p-8" id="about">
 								<About className='' />
 							</div>
 						</section>
