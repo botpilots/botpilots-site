@@ -69,7 +69,7 @@ function App() {
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots AB</p>
 				<span className='flex justify-center items-center gap-5 py-4'>
-					<button onClick={() => handleContactUsClick()} className='h-8 text-nowrap'>email us</button>
+					<button onClick={() => handleContactUsClick()} className="h-8 w-26 text-nowrap">{showForm ? "close form" : "email us"}</button>
 					<a href='https://github.com/hulsbo'>
 						<img src={github} alt='GitHub' className='w-8 h-8' />
 					</a>
