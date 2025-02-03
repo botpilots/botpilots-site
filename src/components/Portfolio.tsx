@@ -1,12 +1,15 @@
-const Portfolio = (props: {className: string}) => {
+import tools from '../assets/tools.svg';
+
+const Portfolio = (props: { className?: string }) => {
 	return (
-		<div className={props.className}>
-			<h2 className='text-4xl font-bold py-4 text-left'>Portfolio</h2>
-
-			<p id="p1" className='text-lg text-left py-4'>
-				Webpage under construction, please check back later.
-			</p>
-
+		<div className={props.className + ' flex gap-8 flex-wrap lg:flex-nowrap'}>
+			<img src={tools} width={100} />
+			<div className="py-4 space-y-2">
+				<h2 className='text-4xl font-bold text-left'>Portfolio</h2>
+				<p id="p1" className='text-lg text-left'>
+					Apologies, stuff still cooking here.
+				</p>
+			</div>
 		</div>
 	);
 };
