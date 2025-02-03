@@ -39,21 +39,21 @@ function App() {
 					))}
 				</ul>
 			</header>
-			<main className='fixed lg:top-24 top-40 bottom-24 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar'>
+			<main className='fixed top-16 bottom-16 w-screen'>
 				{
-					// Display content based on currentFragment, rendering the corresponding component.
-					<div className="max-h-full flex overflow-x-auto snap-x snap-mandatory w-screen hide-scrollbar scroll-smooth">
-						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center">
+					// div container all horizontal sections. Theref
+					<div className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+						<section className="snap-center flex-shrink-0 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar">
 							<div className="max-h-full max-w-[800px] w-full p-8" id="services">
 								<Services className='' />
 							</div>
 						</section>
-						<section className="max-h-full snap-center flex-shrink-0 w-screen flex items-center justify-center">
+						<section className="max-h-full snap-center flex-shrink-0 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar">
 							<div className="max-w-[800px] w-full px-8" id="portfolio">
 								<Portfolio className='' />
 							</div>
 						</section>
-						<section className="max-h-full snap-center flex-shrink-0 w-screen flex items-center justify-center">
+						<section className="max-h-full snap-center flex-shrink-0 w-screen flex items-center justify-center overflow-y-scroll hide-scrollbar">
 							<div className="max-w-[800px] w-full p-8" id="about">
 								<About className='' />
 							</div>
