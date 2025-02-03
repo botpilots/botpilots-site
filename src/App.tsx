@@ -18,6 +18,11 @@ function App() {
 	// Array containing all menu types.
 	const menuTypes = ['services', 'portfolio', 'about'];
 
+	// If hash is empty, set it to the first menu type.
+	if (!window.location.hash) {
+		window.location.hash = menuTypes[0];
+	}
+
 	const handleContactUsClick = () => {
 		// Toggle the form visibility.
 		setShowForm(showForm ? false : true);
