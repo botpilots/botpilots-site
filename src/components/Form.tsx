@@ -90,11 +90,11 @@ const Form: React.FC<FormProps> = (props) => {
 	return (
 		<>
 			{(
-				<div className="h-full inset-0 flex items-center justify-center text-[#b9d5ff] bg-slate-900 border-b-0 border-slate-700 py-6 px-8 rounded border-1">
-					<form onSubmit={handleSubmit} className="h-full w-full flex flex-col space-y-4">
-						<h2 className="text-4xl font-bold text-center">Hit us up</h2>
-						<div className="flex flex-col">
-							<label htmlFor="email" className="text-left my-3">
+				<div className="h-full flex flex-col bg-slate-900 border-slate-700 py-6 px-8 rounded border-1">
+					<h2 className="text-3xl font-bold text-center">Hit us up</h2>
+					<form onSubmit={handleSubmit} className="h-full w-full flex flex-col justify-evenly gap-4">
+						<div className="flex flex-col justify-between gap-2">
+							<label htmlFor="email" className="text-left">
 								Email (not stored or shared):
 							</label>
 							<input
@@ -104,8 +104,8 @@ const Form: React.FC<FormProps> = (props) => {
 								className="border border-gray-300 p-2 rounded"
 							/>
 						</div>
-						<div className="flex flex-col">
-							<label htmlFor="subject" className="text-left my-3">
+						<div className="flex flex-col justify-between gap-2">
+							<label htmlFor="subject" className="text-left">
 								Subject:
 							</label>
 							<input
@@ -116,8 +116,8 @@ const Form: React.FC<FormProps> = (props) => {
 								className="border border-gray-300 p-2 rounded"
 							/>
 						</div>
-						<div className="flex flex-col h-full">
-							<label htmlFor="body" className="text-left my-3">
+						<div className="flex-1 flex flex-col justify-between gap-2">
+							<label htmlFor="body" className="text-left">
 								Body:
 							</label>
 							<textarea
@@ -131,7 +131,6 @@ const Form: React.FC<FormProps> = (props) => {
 								id="submitButton"
 								type="submit"
 								style={{ transition: 'background-color 0.3s', width: '100%' }}
-
 							>
 								{submitButtonLabel}
 							</button>
