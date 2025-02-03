@@ -90,7 +90,7 @@ const Form: React.FC<FormProps> = (props) => {
 	return (
 		<>
 			{(
-				<div className="h-full flex flex-col bg-slate-900 border-slate-700 py-6 px-8 rounded border-1">
+				<div className="h-full flex flex-col gap-2 bg-slate-900 border-slate-700 py-6 px-8 rounded border-1">
 					<h2 className="text-3xl font-bold text-center">Hit us up</h2>
 					<form onSubmit={handleSubmit} className="h-full w-full flex flex-col justify-evenly gap-4">
 						<div className="flex flex-col justify-between gap-2">
