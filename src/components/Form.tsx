@@ -37,7 +37,7 @@ const Form: React.FC<FormProps> = (props) => {
 				console.log(".then response object: ", response);
 				createBtnBehaviour(submitButton, 'Mail delivered - we get back to you shortly!', 'background-color: green;', false, 2000);
 			})
-			.catch(function (error) {
+			.catch(async function (error) {
 				if (error.response) { // Handle HTTP errors
 					if (error.status === 429) {
 						createBtnBehaviour(submitButton, 'Too many requests', 'background-color: red;', true, 2000);
@@ -52,19 +52,34 @@ const Form: React.FC<FormProps> = (props) => {
 					console.log("error.response.status: ", error.response.status);
 					console.log("error.response.headers: ", error.response.headers);
 				} else if (error.request) { // Handle network errors
-					createBtnBehaviour(submitButton, 'Network error', 'background-color: red;', true, 2000);
 					console.log(
-						"The request was made but no response was received.\
+						"The POST request was made but no response was received.\
 						Request: ", error.request
 					);
+					console.log("Doing an extra OPTIONS request to get error status...");
+					try { // Make an OPTIONS request explicitly to get its error status. 
+						const response = await axios.options(`https://ogiuf6ebhj.execute-api.eu-west-1.amazonaws.com/Prod/send/`);
+						if (response.status === 429) {
+							createBtnBehaviour(submitButton, 'Too many requests', 'background-color: red;', true, 2000);
+						} else {
+							if (response.status) {
+								console.error("Unexpected response from extra OPTIONS request: ", response);
+							} else {
+								console.error("No response status from extra OPTIONS request.");
+							}
+							createBtnBehaviour(submitButton, 'Network error', 'background-color: red;', true, 2000);
+						}
+					} catch (error) {
+						console.error("error from extra OPTIONS request: ", error);
+					}
 				} else { // Handle client errors
 					createBtnBehaviour(submitButton, 'Client error', 'background-color: red;', true, 2000);
-					console.log(
+					console.error(
 						'Something happened in setting up the request that triggered an Error: ',
 						error.message
 					);
 				}
-				console.log("error.config: ", error.config);
+				console.error("error.config: ", error.config);
 			});
 	};
 
