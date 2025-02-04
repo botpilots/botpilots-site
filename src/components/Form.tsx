@@ -52,7 +52,10 @@ const Form: React.FC<FormProps> = (props) => {
 			// Handle network errors
 			.catch((error) => {
 				console.error(error);
-				createBtnBehaviour(submitButton, 'Network error', 'background-color: red;', true, 2000);
+				// NOTE: Could be any error since response body is from POST which here has empty response (otherwise .then). 
+				// and OPTIONS request is not regarded for by fetch(), Too many requests is an assumption.
+				// Next time I'll make a simple request iwth FormData not requiring CORS.
+				createBtnBehaviour(submitButton, 'Too many requests', 'background-color: red;', true, 2000);
 			});
 	};
 
