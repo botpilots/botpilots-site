@@ -52,11 +52,7 @@ const Form: React.FC<FormProps> = (props) => {
 			// Handle network errors
 			.catch((error) => {
 				console.error(error);
-				if (error.status && error.status === 429) {
-					createBtnBehaviour(submitButton, 'Too many requests', 'background-color: red;', true, 2000);
-				} else {
-					createBtnBehaviour(submitButton, 'Network error', 'background-color: red;', true, 2000);
-				}
+				createBtnBehaviour(submitButton, 'Network error', 'background-color: red;', true, 2000);
 			});
 	};
 
