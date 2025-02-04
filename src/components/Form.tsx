@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 
 interface FormProps {
 	setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,50 +20,39 @@ const Form: React.FC<FormProps> = (props) => {
 		submitButton.textContent = 'Sending...';
 		submitButton.disabled = true;
 
+
 		const requestBody = {
 			sender: form.sender.value,
 			subject: form.subject.value,
 			body: form.body.value,
 		};
 
-		axios.post(`https://ogiuf6ebhj.execute-api.eu-west-1.amazonaws.com/Prod/send/`, requestBody, {
+		fetch(`https://ogiuf6ebhj.execute-api.eu-west-1.amazonaws.com/Prod/send/`, {
 			method: 'POST',
+			mode: 'cors',
 			headers: {
 				'Content-Type': 'application/json',
 			},
+			body: JSON.stringify(requestBody),
 		})
 			.then(response => {
-				console.log(".then response object: ", response);
-				createBtnBehaviour(submitButton, 'Mail delivered - we get back to you shortly!', 'background-color: green;', false, 2000);
-			})
-			.catch(function (error) {
-				if (error.response) { // Handle HTTP errors
-					if (error.status === 429) {
+				// Handle HTTP errors
+				if (!response.ok) {
+					if (response.status === 429) {
 						createBtnBehaviour(submitButton, 'Too many requests', 'background-color: red;', true, 2000);
 					} else {
 						createBtnBehaviour(submitButton, 'Server error', 'background-color: red;', true, 2000);
 					}
-					console.log(
-						"The request was made and the server responded with \
-						a status code that falls out of the range of 2xx."
-					);
-					console.log("error.response.data: ", error.response.data);
-					console.log("error.response.status: ", error.response.status);
-					console.log("error.response.headers: ", error.response.headers);
-				} else if (error.request) { // Handle network errors
-					createBtnBehaviour(submitButton, 'Network error', 'background-color: red;', true, 2000);
-					console.log(
-						"The request was made but no response was received.\
-						Request: ", error.request
-					);
-				} else { // Handle client errors
-					createBtnBehaviour(submitButton, 'Client error', 'background-color: red;', true, 2000);
-					console.log(
-						'Something happened in setting up the request that triggered an Error: ',
-						error.message
-					);
 				}
-				console.log("error.config: ", error.config);
+				// Handle successful response
+				else {
+					createBtnBehaviour(submitButton, 'Mail delivered - we get back to you shortly!', 'background-color: green;', false, 2000);
+				}
+			})
+			// Handle network errors
+			.catch((error) => {
+				console.error(error);
+				createBtnBehaviour(submitButton, 'Network error', 'background-color: red;', true, 2000);
 			});
 	};
 
@@ -153,5 +141,9 @@ const Form: React.FC<FormProps> = (props) => {
 		</>
 	);
 };
+
+
+
+
 
 export default Form;
