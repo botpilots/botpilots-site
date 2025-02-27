@@ -10,12 +10,13 @@ import Services from './components/Services.tsx';
 import Form from './components/Form.tsx';
 import ScrollNotifier from './components/ScrollNotifier.tsx';
 import { useHashBasedScrolling } from './utils/useHashBasedScrolling.ts';
+import Services2 from './components/Services2.tsx';
 
 function App() {
 	// useState for currently active menu (fragment value).
 	// TODO: consier removing this state, as it is not used.
 	const [showForm, setShowForm] = useState(false);
-	
+
 	// Get ref for horizontal scrolling container that syncs with URL hash
 	const horizontalScrollRef = useHashBasedScrolling();
 
@@ -58,7 +59,7 @@ function App() {
 				<ScrollNotifier direction="right" />
 				<ScrollNotifier direction="up" />
 				<ScrollNotifier direction="down" />
-				
+
 				{
 					// div container all horizontal sections with nested vertical snap scrolling
 					<div ref={horizontalScrollRef} className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
@@ -67,22 +68,16 @@ function App() {
 								<Services />
 							</div>
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
-								<Services />
+								<Services2 />
 							</div>
 						</section>
 						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<Portfolio />
 							</div>
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
-								<Portfolio />
-							</div>
 						</section>
 						<section id="about" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
-								<About />
-							</div>
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
 								<About />
 							</div>
 						</section>
