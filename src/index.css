@@ -122,10 +122,9 @@ html {
 
 	@keyframes squiggle_sometimes {
 		0%, 95% { transform: translateX(0) rotate(0); } /* Stay still for 95% of the time */
-		97% { transform: translateX(4px) rotate(2deg); }
-		98% { transform: translateX(-4px) rotate(-2deg); }
-		99% { transform: translateX(5px) rotate(3deg); }
-		100% { transform: translateX(0) rotate(0); }
+		97% { transform: skewX(0deg); }
+		99% { transform: skewX(20deg); }
+		100% { transform: skewX(0deg); }
 	  }
 
 	@keyframes squiggle {
