@@ -8,6 +8,7 @@ import Portfolio from './components/Portfolio.tsx';
 import About from './components/About.tsx';
 import Services from './components/Services.tsx';
 import Form from './components/Form.tsx';
+import ScrollNotifier from './components/ScrollNotifier.tsx';
 
 function App() {
 
@@ -49,6 +50,12 @@ function App() {
 				</ul>
 			</header>
 			<main className='fixed top-16 bottom-16 w-screen'>
+				{/* Fixed scroll notifiers that fade out when scrolling */}
+				<ScrollNotifier direction="left" />
+				<ScrollNotifier direction="right" />
+				<ScrollNotifier direction="up" />
+				<ScrollNotifier direction="down" />
+				
 				{
 					// div container all horizontal sections with nested vertical snap scrolling
 					<div className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
@@ -78,7 +85,7 @@ function App() {
 						</section>
 					</div>
 				}
-			</main >
+			</main>
 			<footer className='fixed bottom-0 w-full h-16 flex justify-between items-center px-[5%] sm:px-10 bg-slate-900 border-t border-slate-700 z-10 sm:text-sm text-xs'>
 				<p className='text-[#b9d5ff]'>
 					&copy; 2025 Botpilots AB</p>
@@ -98,7 +105,7 @@ function App() {
 			<div className={`fixed sm:h-1/2 sm:min-h-[425px] sm:top-1/4 sm:left-1/8 sm:w-3/4 left-0 bottom-16 top-16 w-full transition-transform duration-1000 ${showForm ? 'translate-y-0' : 'translate-y-[200%]'}`}>
 				<Form setShowForm={setShowForm} />
 			</div>
-		</div >
+		</div>
 	);
 }
 
