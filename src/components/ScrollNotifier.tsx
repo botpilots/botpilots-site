@@ -23,6 +23,7 @@ const UI_CLASSES = {
 const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
   const [canScroll, setCanScroll] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [isMouseMoving, setIsMouseMoving] = useState(false); // New state for mouse movement
   const isHorizontal = direction === 'left' || direction === 'right';
 
   // Handle click event to scroll to the adjacent element
@@ -153,6 +154,7 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
 
   useEffect(() => {
     let scrollTimeout: NodeJS.Timeout;
+    let mouseMoveTimeout: NodeJS.Timeout;
     
     // Handle scrolling events
     const handleScroll = () => {
@@ -165,11 +167,22 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
       }, 400);
     };
 
+    // Handle mouse movement events
+    const handleMouseMove = () => {
+        setIsMouseMoving(true);
+        clearTimeout(mouseMoveTimeout);
+
+        mouseMoveTimeout = setTimeout(() => {
+            setIsMouseMoving(false);
+        }, 500); // Adjust the delay as needed
+    };
+
     // Set up event listeners
     window.addEventListener('scroll', handleScroll, true);
     document.querySelectorAll('.snap-x, .snap-y').forEach(el => {
       el.addEventListener('scroll', handleScroll, { passive: true });
     });
+    window.addEventListener('mousemove', handleMouseMove); // Add mousemove event
     
     // Setup observer for better detection
     const observer = new IntersectionObserver(
@@ -196,6 +209,7 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
     // Cleanup
     return () => {
       clearTimeout(scrollTimeout);
+      clearTimeout(mouseMoveTimeout);
       clearInterval(intervalCheck);
       window.removeEventListener('scroll', handleScroll, true);
       document.querySelectorAll('.snap-x, .snap-y').forEach(el => {
@@ -203,6 +217,7 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
       });
       window.removeEventListener('resize', checkScrollability);
       window.removeEventListener('hashchange', checkScrollability);
+      window.removeEventListener('mousemove', handleMouseMove); // Remove mousemove event
       observer.disconnect();
     };
   }, [checkScrollability]);
@@ -212,7 +227,7 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
 
   return (
     <div 
-      className={`z-50 ${UI_CLASSES.position[direction]} transition-opacity duration-300 ${isScrolling ? 'opacity-0' : 'opacity-100'} cursor-pointer`}
+      className={`z-50 ${UI_CLASSES.position[direction]} transition-opacity duration-300 ${isScrolling || isMouseMoving ? 'opacity-100' : 'opacity-0'} cursor-pointer`}
       onClick={handleClick}
       aria-label={`Scroll ${direction}`}
       role="button"
