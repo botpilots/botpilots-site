@@ -11,7 +11,7 @@ const cases = (props: { className?: string }) => {
 					<p className='text-lg text-left my-2'>
 						Several XSLT transforms were developed on behalf of a customer to PDSVISION,
 						which were in need of a custom XML data pipeline for an integration project between their PLM, CREO Illustrate and Simonsoft CMS.
-						The work was done in time and well recieved.
+						The work was done in time and was well recieved.
 					</p>
 				</div>
 			</div>

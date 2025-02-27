@@ -105,6 +105,7 @@ html {
 	font-size: 7.7611px;
 	font-family: Ubuntu;
 	user-select: none;
+	animation: squiggle_sometimes 30s infinite alternate;
 	}
 	
 	.bot-logo-part {
@@ -118,6 +119,14 @@ html {
 	.text-style:hover {
 		animation: squiggle 1.2s infinite;
 	}
+
+	@keyframes squiggle_sometimes {
+		0%, 95% { transform: translateX(0) rotate(0); } /* Stay still for 95% of the time */
+		97% { transform: translateX(4px) rotate(2deg); }
+		98% { transform: translateX(-4px) rotate(-2deg); }
+		99% { transform: translateX(5px) rotate(3deg); }
+		100% { transform: translateX(0) rotate(0); }
+	  }
 
 	@keyframes squiggle {
 		0% { transform: skewX(0deg); }
