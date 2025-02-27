@@ -50,16 +50,31 @@ function App() {
 			</header>
 			<main className='fixed top-16 bottom-16 w-screen'>
 				{
-					// div container all horizontal sections. Theref
+					// div container all horizontal sections with nested vertical snap scrolling
 					<div className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
-						<section id="services" className="snap-center flex-shrink-0 w-screen flex sm:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
-							<Services />
+						<section id="services" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+								<Services />
+							</div>
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+								<Services />
+							</div>
 						</section>
-						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex sm:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
-							<Portfolio />
+						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+								<Portfolio />
+							</div>
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+								<Portfolio />
+							</div>
 						</section>
-						<section id="about" className="snap-center flex-shrink-0 w-screen flex sm:items-center items-start justify-center overflow-y-scroll hide-scrollbar p-6 [&>*]:max-w-[800px]">
-							<About />
+						<section id="about" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+								<About />
+							</div>
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+								<About />
+							</div>
 						</section>
 					</div>
 				}
@@ -88,23 +103,3 @@ function App() {
 }
 
 export default App;
-
-
-
-<div className="flex overflow-x-auto snap-x snap-mandatory w-screen h-screen">
-	<section className="snap-center flex-shrink-0 w-screen h-screen flex items-center justify-center bg-red-500">
-		<div className="max-w-[800px] w-full px-4 bg-amber-50">
-			<Services className='w-screen max-w-full' />
-		</div>
-	</section>
-	<section className="snap-center flex-shrink-0 w-screen h-screen flex items-center justify-center bg-blue-500">
-		<div className="max-w-[800px] w-full px-4 bg-amber-50">
-			<Portfolio className='w-screen max-w-full' />
-		</div>
-	</section>
-	<section className="snap-center flex-shrink-0 w-screen h-screen flex items-center justify-center bg-green-500">
-		<div className="max-w-[800px] w-full px-4 bg-amber-50">
-			<About className='w-screen max-w-full' />
-		</div>
-	</section>
-</div>
