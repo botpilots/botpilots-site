@@ -9,12 +9,15 @@ import About from './components/About.tsx';
 import Services from './components/Services.tsx';
 import Form from './components/Form.tsx';
 import ScrollNotifier from './components/ScrollNotifier.tsx';
+import { useHashBasedScrolling } from './utils/useHashBasedScrolling.ts';
 
 function App() {
-
 	// useState for currently active menu (fragment value).
 	// TODO: consier removing this state, as it is not used.
 	const [showForm, setShowForm] = useState(false);
+	
+	// Get ref for horizontal scrolling container that syncs with URL hash
+	const horizontalScrollRef = useHashBasedScrolling();
 
 	// Array containing all menu types.
 	const menuTypes = ['services', 'portfolio', 'about'];
@@ -58,7 +61,7 @@ function App() {
 				
 				{
 					// div container all horizontal sections with nested vertical snap scrolling
-					<div className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+					<div ref={horizontalScrollRef} className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
 						<section id="services" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<Services />
