@@ -1,15 +1,16 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * Custom hook that syncs horizontal scroll position with URL hash
  * Updates the URL hash when scrolling between sections
  * 
- * @returns {React.RefObject<HTMLDivElement>} Ref to be attached to the scrollable container
+ * @returns {object} Object containing the ref and current hash
  */
 export function useHashBasedScrolling() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isScrollingRef = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [currentHash, setCurrentHash] = useState(window.location.hash);
 
   // Update hash based on scroll position
   const updateHashBasedOnScrollPosition = () => {
@@ -40,6 +41,8 @@ export function useHashBasedScrolling() {
     if (closestSection && closestSection.id && window.location.hash !== `#${closestSection.id}`) {
       // Use history.replaceState to avoid scrolling
       window.history.replaceState(null, '', `#${closestSection.id}`);
+      // Update the current hash state
+      setCurrentHash(`#${closestSection.id}`);
     }
   };
 
@@ -71,6 +74,13 @@ export function useHashBasedScrolling() {
     // Initial hash update based on position
     setTimeout(updateHashBasedOnScrollPosition, 100);
     
+    // Set up hash change listener for direct hash changes (clicking links)
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+    
+    window.addEventListener('hashchange', handleHashChange);
+    
     return () => {
       if (scrollContainer) {
         scrollContainer.removeEventListener('scroll', handleScroll);
@@ -78,8 +88,9 @@ export function useHashBasedScrolling() {
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
       }
+      window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
-  return scrollContainerRef;
+  return { scrollContainerRef, currentHash };
 }
