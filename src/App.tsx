@@ -16,9 +16,6 @@ function App() {
 	// useState for form visibility
 	const [showForm, setShowForm] = useState(false);
 
-	// Get ref and current hash from the hash-based scrolling hook
-	const { scrollContainerRef, currentHash } = useHashBasedScrolling();
-
 	// Array containing all menu types.
 	const menuTypes = ['services', 'portfolio', 'about'];
 
@@ -26,6 +23,9 @@ function App() {
 	if (!window.location.hash) {
 		window.location.hash = menuTypes[0];
 	}
+
+	// Get ref and current hash from the hash-based scrolling hook
+	const { scrollContainerRef, currentHash } = useHashBasedScrolling();
 
 	const handleContactUsClick = () => {
 		// Toggle the form visibility.
@@ -63,7 +63,7 @@ function App() {
 				{
 					// div container all horizontal sections with nested vertical snap scrolling
 					<div ref={scrollContainerRef} className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
-						<section id="services" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
+						<section id="services" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<Services />
 							</div>
@@ -71,12 +71,12 @@ function App() {
 								<Services2 />
 							</div>
 						</section>
-						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
+						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<Portfolio />
 							</div>
 						</section>
-						<section id="about" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
+						<section id="about" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<About />
 							</div>
