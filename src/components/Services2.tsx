@@ -4,7 +4,7 @@ const Services = (props: { className?: string }) => {
 	return (
 		<div className={props.className + ' flex gap-12 flex-wrap items-center'}>
 
-			<img src={image} alt="Lines of code." className="flex-1 max-w-[400px] border-8 border-double border-slate-700" />
+			<img src={image} alt="Lines of code." className="flex-1 lg:max-w-[400px] border-8 border-double border-slate-700" />
 
 			<div className="flex-1 flex-col space-y-4 min-w-[250px]">
 				<p className='text-lg text-left'>Our services include:</p>
