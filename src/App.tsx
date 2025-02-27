@@ -13,12 +13,11 @@ import { useHashBasedScrolling } from './utils/useHashBasedScrolling.ts';
 import Services2 from './components/Services2.tsx';
 
 function App() {
-	// useState for currently active menu (fragment value).
-	// TODO: consier removing this state, as it is not used.
+	// useState for form visibility
 	const [showForm, setShowForm] = useState(false);
 
-	// Get ref for horizontal scrolling container that syncs with URL hash
-	const horizontalScrollRef = useHashBasedScrolling();
+	// Get ref and current hash from the hash-based scrolling hook
+	const { scrollContainerRef, currentHash } = useHashBasedScrolling();
 
 	// Array containing all menu types.
 	const menuTypes = ['services', 'portfolio', 'about'];
@@ -45,7 +44,8 @@ function App() {
 					{menuTypes.map((fragment) => (
 						<li key={fragment}>
 							<a href={`#${fragment}`}
-								className='transition-colors hover:text-[#204a87] cursor-pointer'
+								className={`transition-colors hover:text-[#204a87] cursor-pointer ${currentHash === `#${fragment}` && 'text-[#204a87]'
+									}`}
 							>
 								{fragment.replace(/-/g, ' ')}
 							</a>
@@ -62,7 +62,7 @@ function App() {
 
 				{
 					// div container all horizontal sections with nested vertical snap scrolling
-					<div ref={horizontalScrollRef} className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+					<div ref={scrollContainerRef} className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
 						<section id="services" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-auto snap-y snap-mandatory hide-scrollbar p-6">
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<Services />
