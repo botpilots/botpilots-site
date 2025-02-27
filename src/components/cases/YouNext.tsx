@@ -12,7 +12,7 @@ const cases = (props: { className?: string }) => {
 						We have liability insurance and pretty good humour too.
 					</p>
 					<p className='text-lg text-left my-2'>
-						Reach us via the the <b>email us</b> button below. First meeting is on us!
+						You can reach us via the <b>email us</b> button below. First meeting is on us!
 					</p>
 				</div>
 			</div>
