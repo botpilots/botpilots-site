@@ -12,13 +12,6 @@ const Services = (props: { className?: string }) => {
 					From dynamic and AI-driven front-end designs to robust, reliable back-end systems,
 					BotPilots deliver performant and exciting web applications tailored to user needs and expectations.
 				</p>
-				<p className='text-lg text-left'>Our services include:</p>
-				<ul className='list-disc pl-8 pt-1 text-left'>
-					<li>Front-end development</li>
-					<li>Back-end and API development</li>
-					<li>Web Application Project Management</li>
-				</ul>
-				<h4 className='italic text-left'>With passion to realise your web application idea!</h4>
 			</div>
 		</div>
 	);
