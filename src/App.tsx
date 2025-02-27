@@ -4,20 +4,23 @@ import github from './assets/github.svg';
 import linkedin from './assets/linkedin.svg';
 import location from './assets/location.svg';
 import { useState } from 'react';
-import Portfolio from './components/Portfolio.tsx';
 import About from './components/About.tsx';
 import Services from './components/Services.tsx';
 import Form from './components/Form.tsx';
 import ScrollNotifier from './components/ScrollNotifier.tsx';
 import { useHashBasedScrolling } from './utils/useHashBasedScrolling.ts';
 import Services2 from './components/Services2.tsx';
+import Cases from './components/Cases.tsx';
+import Simonsoft from './components/cases/Simonsoft.tsx';
+import PDSVISION from './components/cases/PDSVISION.tsx';
+import YouNext from './components/cases/YouNext.tsx';
 
 function App() {
 	// useState for form visibility
 	const [showForm, setShowForm] = useState(false);
 
 	// Array containing all menu types.
-	const menuTypes = ['services', 'portfolio', 'about'];
+	const menuTypes = ['services', 'about', 'cases'];
 
 	// If hash is empty, set it to the first menu type.
 	if (!window.location.hash) {
@@ -71,14 +74,23 @@ function App() {
 								<Services2 />
 							</div>
 						</section>
-						<section id="portfolio" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
-								<Portfolio />
-							</div>
-						</section>
 						<section id="about" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
 							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<About />
+							</div>
+						</section>
+						<section id="cases" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+								<Cases />
+							</div>
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+								<Simonsoft />
+							</div>
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+								<PDSVISION />
+							</div>
+							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+								<YouNext />
 							</div>
 						</section>
 					</div>

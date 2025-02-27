@@ -9,9 +9,10 @@ const Services = (props: { className?: string }) => {
 			<div className="flex-1 flex-col space-y-4 min-w-[250px]">
 				<p className='text-lg text-left'>Our services include:</p>
 				<ul className='list-disc pl-8 pt-1 text-left'>
-					<li>Front-end development</li>
-					<li>Back-end and API development</li>
-					<li>Web Application Project Management</li>
+					<li>Web Application development</li>
+					<li>Marketing site development and SEO</li>
+					<li>Back-end, database and API development</li>
+					<li>Project Management</li>
 				</ul>
 				<h4 className='italic text-left'>With passion to realise your web application idea!</h4>
 			</div>
