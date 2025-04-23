@@ -1,0 +1,62 @@
+<!-- redirect.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="refresh" content="0;url=https://hulsbo.github.io/cv-page/" />
+		<title>Redirecting...</title>
+		<style>
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+				margin: 0;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				background: rgb(219 234 254);
+				color: #2c3e50;
+			}
+
+			.spinner {
+				width: 80px;
+				height: 80px;
+				margin-bottom: 10px;
+				border: 8px solid rgb(239 246 255);
+				border-top: 8px solid #3498db;
+				border-radius: 50%;
+				animation: spin 1s linear infinite;
+			}
+
+			@keyframes spin {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+
+			p {
+				font-size: clamp(10px, 3vw, 34px);
+				text-align: center;
+			}
+
+			@media (min-aspect-ratio: 1/1) {
+				.spinner {
+					border-width: 6px;
+				}
+			}
+
+			a {
+				color: #3498db;
+				text-decoration: none;
+				transition: color 0.3s;
+			}
+
+			a:hover {
+				color: #2980b9;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="spinner"></div>
+		<p>Redirecting to <a href="https://hulsbo.github.io/cv-page/">https://hulsbo.github.io/cv-page/</a></p>
+	</body>
+</html>
