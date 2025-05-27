@@ -26,7 +26,6 @@ const Services = (props: { className?: string }) => {
 					typeSpeed={TYPE_SPEED}
 					backspaceSpeed={BACKSPACE_SPEED}
 					wordPause={WORD_PAUSE}
-					breakpoint={650}
 				/>
 				<h3 className="text-2xl font-light text-left">
 					BotPilots offer specialised expertise in integrating your digital product with Generative AI.

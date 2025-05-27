@@ -69,24 +69,24 @@ const AnimatedHeader = ({
 		return () => { isCancelled = true; };
 	}, [words, typeSpeed, backspaceSpeed, wordPause]);
 
-	// Logging logic
-	useEffect(() => {
-		if (windowWidth >= breakpoint) {
-			const preview = baseStart + "|" + baseEnd + displayed;
-			console.log(
-				`[AnimatedHeader] Page too wide (${windowWidth}px). Line break would be here:`,
-				preview
-			);
-		}
-	}, [windowWidth, baseStart, baseEnd, displayed, breakpoint]);
+	// Logging logic (debug)
+	// useEffect(() => {
+	// 	if (windowWidth < breakpoint) {
+	// 		const preview = baseStart + "|" + baseEnd + displayed;
+	// 		console.log(
+	// 			`[AnimatedHeader] Page narrow (${windowWidth}px). Line break was inserted here:`,
+	// 			preview
+	// 		);
+	// 	}
+	// }, [windowWidth, baseStart, baseEnd, displayed, breakpoint]);
 
 	return (
 		<h3 className={`text-4xl font-bold text-left ${className}`}>
 			{baseStart}
 			{windowWidth < breakpoint && <br />}
-			<div className=''>
+			<span className=''>
 				{baseEnd}
-			</div>
+			</span>
 			{displayed}
 			<span className="animate-pulse">|</span>
 		</h3>
