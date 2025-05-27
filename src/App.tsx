@@ -66,30 +66,30 @@ function App() {
 				{
 					// div container all horizontal sections with nested vertical snap scrolling
 					<div ref={scrollContainerRef} className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
-						<section id="services" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+						<section id="services" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll sm:snap-y sm:snap-mandatory hide-scrollbar p-6 mobile-scroll-section">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<Services />
 							</div>
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
 								<Services2 />
 							</div>
 						</section>
-						<section id="about" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+						<section id="about" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll sm:snap-y sm:snap-mandatory hide-scrollbar p-6 mobile-scroll-section">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<About />
 							</div>
 						</section>
-						<section id="cases" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll snap-y snap-mandatory hide-scrollbar p-6">
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+						<section id="cases" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll sm:snap-y sm:snap-mandatory hide-scrollbar p-6 mobile-scroll-section">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
 								<Cases />
 							</div>
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
 								<Simonsoft />
 							</div>
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
 								<PDSVISION />
 							</div>
-							<div className="snap-center flex-shrink-0 min-h-full w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
 								<YouNext />
 							</div>
 						</section>

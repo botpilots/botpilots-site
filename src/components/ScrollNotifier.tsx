@@ -54,8 +54,11 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
       const currentSection = document.getElementById(hash) as HTMLElement;
       if (!currentSection) return;
       
-      // Find the snap items within this section
-      const snapItems = currentSection.querySelectorAll(':scope > div.snap-center');
+      // Find the snap items within this section (or all direct div children on mobile)
+      const isMobile = window.innerWidth < 640;
+      const snapItems = isMobile 
+        ? currentSection.querySelectorAll(':scope > div')
+        : currentSection.querySelectorAll(':scope > div.snap-center, :scope > div.snap-start');
       if (snapItems.length <= 1) return;
       
       // Find the most visible item to determine current position
@@ -119,8 +122,11 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
         return;
       }
       
-      // Check for vertical snap points
-      const snapItems = currentSection.querySelectorAll(':scope > div.snap-center');
+      // Check for vertical snap points (or all direct div children on mobile)
+      const isMobile = window.innerWidth < 640;
+      const snapItems = isMobile 
+        ? currentSection.querySelectorAll(':scope > div')
+        : currentSection.querySelectorAll(':scope > div.snap-center, :scope > div.snap-start');
       if (snapItems.length <= 1) {
         setCanScroll(false);
         return;
@@ -192,7 +198,7 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
       { threshold: 0.2 }
     );
     
-    document.querySelectorAll('section[id], div.snap-center').forEach(el => {
+    document.querySelectorAll('section[id], div.snap-center, div.snap-start').forEach(el => {
       observer.observe(el);
     });
     

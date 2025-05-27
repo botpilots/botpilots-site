@@ -85,6 +85,17 @@ html {
 	scrollbar-width: none; 
   }
 
+/* Mobile scroll behavior - disable snap scrolling on small screens */
+@media (max-width: 639px) {
+  .mobile-scroll-section {
+    scroll-snap-type: none !important;
+  }
+  
+  .mobile-scroll-section > div {
+    scroll-snap-align: none !important;
+  }
+}
+
 /* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
