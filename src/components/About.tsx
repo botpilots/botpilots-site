@@ -12,14 +12,27 @@ const About = (props: { className?: string }) => {
 			{/* Text */}
 			<div className="py-2 min-w-[250px] space-y-2">
 				<h2 className='text-4xl font-bold py-2 text-left'>About</h2>
+
 				<p className='text-lg text-left'>
-					Hi, I'm Oskar. I founded BotPilots to combine my passion for coding with helping companies realize their web app visions.
+					Hello, I'm Oskar. I founded BotPilots as I am passionate about helping businesses create innovative, disruptive, and useful products and services. Always having been interested in technology, I graduated in 2019 with a BSc in Innovation Engineering in Product Development and Innovation Management.
 				</p>
+
 				<p className='text-lg text-left'>
-					I'm excited to offer you my expertise in implementing the web technologies of tomorrow. Let's turn dreams into reality together!				</p>
+					In my professional life, I seek to master the systems I act in, to be able to be an agent of change and provide guidance to my peers. I have been working professionally with software development since 2023.
+				</p>
+
+				<p className='text-lg text-left'>
+					The digital space is buzzing with excitement for advancing the value-creation of current products. Developers responsible for both physical and digital products are currently in a unique position to get ahead of the competition. New technologies are pushing the boundaries of value creation, while new customer expectations drive the market.
+				</p>
+
+				<p className='text-lg text-left'>
+					With the greatest anticipation to turn your product vision into reality,
+				</p>
+
 				<div className="text-left py-2">
 					<p>Oskar Huledal - <i>Chief Bot Pilot & Founder</i></p>
 				</div>
+
 			</div>
 		</div>
 	);
