@@ -22,11 +22,10 @@ const Services = (props: { className?: string }) => {
 					We make your product ready for the age of AI:
 				</p>
 				<ul className='list-disc pl-8 pt-1 text-left flex flex-col gap-2'>
-					<li>Enhance your digital discoverability by integrating with the LLM systems your customers use today</li>
-					<li>Offer to your customers an exceptional conversational user experience engaging with your product.</li>
-					<li>Stay competitive as new demands arise on digital products being intuitive and personally adapted.</li>
+					<li>Enhance your digital discoverability by integrating with the LLM systems your customers use today.</li>
+					<li>Offer to your customers an exceptional Conversational UI experience.</li>
+					<li>Stay competitive as new demands arise for products understanding user intuition.</li>
 				</ul>
-
 			</div>
 
 		</div>
