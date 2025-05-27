@@ -6,7 +6,7 @@ const Services = (props: { className?: string }) => {
 
 			<img src={image} alt="Lines of code." className="flex-1 lg:max-w-[400px] border-8 border-double border-slate-700" />
 
-			<div className="flex-1 flex-col space-y-4 min-w-[250px]">
+			<div className="flex-1 flex-col space-y-4 min-w-[250px] ">
 				<p className='text-lg text-left'>We currently offer these services:</p>
 				<ul className='list-disc pl-8 pt-1 text-left'>
 					<li>Apple Intelligence Integrations</li>

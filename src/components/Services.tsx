@@ -1,20 +1,37 @@
-import image from '../assets/services_stock.jpg';
+import React, { useEffect, useState } from 'react';
+import image from '../assets/BP_landing.png';
+
+const TYPEWRITER_TEXT = "Your AI Integration Provider.";
+const TYPE_SPEED = 80; // ms per character
 
 const Services = (props: { className?: string }) => {
+	const [displayed, setDisplayed] = useState('');
+
+	useEffect(() => {
+		let i = 0;
+		const interval = setInterval(() => {
+			setDisplayed(TYPEWRITER_TEXT.slice(0, i + 1));
+			i++;
+			if (i === TYPEWRITER_TEXT.length) clearInterval(interval);
+		}, TYPE_SPEED);
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
 		<div className={props.className + ' flex gap-12 flex-wrap items-center'}>
-			<img
-				src={image}
-				alt="Man sitting at computer."
-				className="flex-1 lg:max-w-[250px] border-8 border-double border-slate-700"
-			/>
+			{/* <img
+                src={image}
+                alt="Man sitting at computer."
+                className="flex-1 lg:max-w-[250px] max-w-[180px] border-8 border-double border-slate-700"
+            /> */}
 
 			<div className="flex-1 flex-col space-y-4 min-w-250px">
 				<h3 className="text-4xl font-bold text-left">
-					Your AI Integration Provider
+					{displayed}
+					<span className="animate-pulse">|</span>
 				</h3>
 				<h3 className="text-2xl font-light text-left">
-					We offer specialised expertise in integrating your digital product with Generative AI.
+					BotPilots offer specialised expertise in integrating your digital product with Generative AI.
 				</h3>
 				<p className='text-left'>The digital landscape is transforming. Users are shifting their attention from search engines to chatbots, seeking solutions providing minimal friction and which intuitively comprehend their needs.
 				</p>
