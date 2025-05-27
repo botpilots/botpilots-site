@@ -2,7 +2,7 @@ import simonsoft from '../../assets/simonsoft_logo.webp'
 
 const cases = (props: { className?: string }) => {
 	return (
-		<div className={props.className + ' flex gap-8 flex-wrap sm:flex-nowrap'}>
+		<div className={props.className + ' flex gap-8 flex-wrap sm:flex-nowrap my-12'}>
 			<div className="py-4 space-y-2">
 				<div>
 					<img src={simonsoft} width={500} className='justify-self-center' />
