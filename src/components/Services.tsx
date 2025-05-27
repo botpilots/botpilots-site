@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import AnimatedHeader from './AnimatedHeader';
 
 const BASE_TEXT = "Your AI Integration ";
 const WORDS = ["Provider.", "Consultant.", "Partner.", "Specialist."]; // Add more words here
@@ -6,44 +7,9 @@ const TYPE_SPEED = 80; // ms per character
 const BACKSPACE_SPEED = 40; // ms per character
 const WORD_PAUSE = 3000; // ms pause after typing a word
 
+
+
 const Services = (props: { className?: string }) => {
-	const [displayed, setDisplayed] = useState('');
-
-	useEffect(() => {
-		let isCancelled = false;
-
-		const typeWord = async (word: string) => {
-			for (let i = 0; i <= word.length; i++) {
-				if (isCancelled) return;
-				setDisplayed(BASE_TEXT + word.slice(0, i));
-				await new Promise(res => setTimeout(res, TYPE_SPEED));
-			}
-		};
-
-		const backspaceWord = async (word: string) => {
-			for (let i = word.length; i >= 0; i--) {
-				if (isCancelled) return;
-				setDisplayed(BASE_TEXT + word.slice(0, i));
-				await new Promise(res => setTimeout(res, BACKSPACE_SPEED));
-			}
-		};
-
-		const runTypewriter = async () => {
-			let wordIndex = 0;
-			while (!isCancelled) {
-				const word = WORDS[wordIndex];
-				await typeWord(word);
-				await new Promise(res => setTimeout(res, WORD_PAUSE));
-				await backspaceWord(word);
-				await new Promise(res => setTimeout(res, 300));
-				wordIndex = (wordIndex + 1) % WORDS.length;
-			}
-		};
-
-		runTypewriter();
-
-		return () => { isCancelled = true; };
-	}, []);
 
 	return (
 		<div className={props.className + ' flex gap-12 flex-wrap items-center'}>
@@ -54,10 +20,14 @@ const Services = (props: { className?: string }) => {
             /> */}
 
 			<div className="flex-1 flex-col space-y-4 min-w-250px mt-16">
-				<h3 className="text-4xl font-bold text-left">
-					{displayed}
-					<span className="animate-pulse">|</span>
-				</h3>
+				<AnimatedHeader
+					baseText={BASE_TEXT}
+					words={WORDS}
+					typeSpeed={TYPE_SPEED}
+					backspaceSpeed={BACKSPACE_SPEED}
+					wordPause={WORD_PAUSE}
+					breakpoint={650}
+				/>
 				<h3 className="text-2xl font-light text-left">
 					BotPilots offer specialised expertise in integrating your digital product with Generative AI.
 				</h3>
