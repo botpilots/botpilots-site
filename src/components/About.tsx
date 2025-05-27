@@ -26,7 +26,7 @@ const About = (props: { className?: string }) => {
 				</p>
 
 				<p className='text-lg text-left'>
-					With the greatest anticipation to turn your product vision into reality,
+					With the greatest anticipation to turn your product vision into reality!
 				</p>
 
 				<div className="text-left py-2">
