@@ -31,7 +31,7 @@ const Services = (props: { className?: string }) => {
 				</h3>
 				<p className='text-left'>The digital landscape is in constant transformation. Users are currently shifting their attention from search engines to chatbots, seeking solutions providing minimal friction and which intuitively comprehend their needs.
 				</p>
-				<p className="text-left text-lg">
+				<p className="text-left font-bold text-2xl">
 					We make your product ready for the age of AI:
 				</p>
 				<ul className='list-disc pl-8 pt-1 text-left flex flex-col gap-2'>
