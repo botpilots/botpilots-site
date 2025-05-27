@@ -80,7 +80,8 @@ function App() {
 							</div>
 						</section>
 						<section id="cases" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll sm:snap-y sm:snap-mandatory hide-scrollbar p-6 mobile-scroll-section">
-							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+							{/* Extra margin on mobile (300px) needed for scroll arrow buttons to properly detect and navigate between different case study sections */}
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center sm:mb-6 mb-[300px] [&>*]:max-w-[800px]">
 								<Cases />
 							</div>
 							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">

@@ -14,7 +14,7 @@ const Services = (props: { className?: string }) => {
 					<li>AI strategy in product development</li>
 				</ul>
 				<h4 className='italic font-bold text-left'>We are happy to discuss your enquiry! If you have any questions, please drop us an email using the button below.</h4>
-				<h5 className='italic text-left'>PS. Stay tuned for the release of our monthly newsletter, summarizing the newest advancements made in AI, as well as general recommendations for businessesss who wish to thrive in the AI era.</h5>
+				<h5 className='italic text-left'>PS. Stay tuned for the release of our monthly newsletter, summarizing the newest advancements made in AI, as well as general recommendations for businessesss who wish to thrive in the AI era. Feel free to send me an email if you want to be on the early bird list.</h5>
 			</div>
 
 			<img src={image} alt="Lines of code." className="flex-1 lg:max-w-[400px] border-8 border-double border-slate-700" />
