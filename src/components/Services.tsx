@@ -1,20 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import image from '../assets/BP_landing.png';
+import { useEffect, useState } from 'react';
 
-const TYPEWRITER_TEXT = "Your AI Integration Provider.";
+const BASE_TEXT = "Your AI Integration ";
+const WORDS = ["Provider.", "Consultant.", "Partner.", "Specialist."]; // Add more words here
 const TYPE_SPEED = 80; // ms per character
+const BACKSPACE_SPEED = 40; // ms per character
+const WORD_PAUSE = 3000; // ms pause after typing a word
 
 const Services = (props: { className?: string }) => {
 	const [displayed, setDisplayed] = useState('');
 
 	useEffect(() => {
-		let i = 0;
-		const interval = setInterval(() => {
-			setDisplayed(TYPEWRITER_TEXT.slice(0, i + 1));
-			i++;
-			if (i === TYPEWRITER_TEXT.length) clearInterval(interval);
-		}, TYPE_SPEED);
-		return () => clearInterval(interval);
+		let isCancelled = false;
+
+		const typeWord = async (word: string) => {
+			for (let i = 0; i <= word.length; i++) {
+				if (isCancelled) return;
+				setDisplayed(BASE_TEXT + word.slice(0, i));
+				await new Promise(res => setTimeout(res, TYPE_SPEED));
+			}
+		};
+
+		const backspaceWord = async (word: string) => {
+			for (let i = word.length; i >= 0; i--) {
+				if (isCancelled) return;
+				setDisplayed(BASE_TEXT + word.slice(0, i));
+				await new Promise(res => setTimeout(res, BACKSPACE_SPEED));
+			}
+		};
+
+		const runTypewriter = async () => {
+			let wordIndex = 0;
+			while (!isCancelled) {
+				const word = WORDS[wordIndex];
+				await typeWord(word);
+				await new Promise(res => setTimeout(res, WORD_PAUSE));
+				await backspaceWord(word);
+				await new Promise(res => setTimeout(res, 300));
+				wordIndex = (wordIndex + 1) % WORDS.length;
+			}
+		};
+
+		runTypewriter();
+
+		return () => { isCancelled = true; };
 	}, []);
 
 	return (
@@ -25,7 +53,7 @@ const Services = (props: { className?: string }) => {
                 className="flex-1 lg:max-w-[250px] max-w-[180px] border-8 border-double border-slate-700"
             /> */}
 
-			<div className="flex-1 flex-col space-y-4 min-w-250px">
+			<div className="flex-1 flex-col space-y-4 min-w-250px mt-16">
 				<h3 className="text-4xl font-bold text-left">
 					{displayed}
 					<span className="animate-pulse">|</span>
