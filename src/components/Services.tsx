@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import AnimatedHeader from './AnimatedHeader';
 
 const BASE_TEXT = "Your AI Integration ";
@@ -30,7 +29,7 @@ const Services = (props: { className?: string }) => {
 				<h3 className="text-2xl font-light text-left">
 					BotPilots offer specialised expertise in integrating your digital product with Generative AI.
 				</h3>
-				<p className='text-left'>The digital landscape is transforming. Users are shifting their attention from search engines to chatbots, seeking solutions providing minimal friction and which intuitively comprehend their needs.
+				<p className='text-left'>The digital landscape is in constant transformation. Users are currently shifting their attention from search engines to chatbots, seeking solutions providing minimal friction and which intuitively comprehend their needs.
 				</p>
 				<p className="text-left text-lg">
 					We make your product ready for the age of AI:
