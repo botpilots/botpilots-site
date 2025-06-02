@@ -19,7 +19,7 @@ const About = (props: { className?: string }) => {
 
 
 				<p className='text-left'>
-					In my professional life, I seek to master the systems I act in, to be able to be an agent of change and provide guidance to my peers. I have been working professionally with software development since 2023.
+					In my professional life, I seek to master the systems I act in, to be able to be an agent of change and provide guidance to my peers. I have been working professionally with software development since 2023 and with technical documentation since 2021.
 				</p>
 
 				<p className='text-left'>
@@ -27,11 +27,11 @@ const About = (props: { className?: string }) => {
 				</p>
 
 				<p className='text-left'>
-					With the greatest anticipation to turn your product vision into reality!
+					With the greatest anticipation to turn your product or content visions into reality!
 				</p>
 
 				<div className="text-left py-2">
-					<p>Oskar Huledal - <i>Chief Bot Pilot & Founder</i></p>
+					<p>Oskar Huledal - <i>Chief "Bot Pilot" & Founder</i></p>
 				</div>
 
 			</div>
