@@ -1,15 +1,12 @@
 import AnimatedHeader from './AnimatedHeader';
 
-const BASE_TEXT = "Your AI Integration ";
-const WORDS = ["Provider.", "Consultant.", "Partner.", "Specialist."]; // Add more words here
-const TYPE_SPEED = 80; // ms per character
-const BACKSPACE_SPEED = 40; // ms per character
-const WORD_PAUSE = 3000; // ms pause after typing a word
-
-
+const BASE_TEXT = "Do you need expertise in ";
+const WORDS = ["XML?", "DITA?", "CSS styling?", "TypeScript?", "RAG?", "Gen AI?", "migrations?", "frontend?", "backend?"];
+const TYPE_SPEED = 80;
+const BACKSPACE_SPEED = 40;
+const WORD_PAUSE = 3000;
 
 const Services = (props: { className?: string }) => {
-
 	return (
 		<div className={props.className + ' flex gap-12 flex-wrap items-center my-12'}>
 			{/* <img
@@ -27,18 +24,10 @@ const Services = (props: { className?: string }) => {
 					wordPause={WORD_PAUSE}
 				/>
 				<h3 className="text-2xl font-light text-left">
-					BotPilots offer specialised expertise in integrating your digital product with Generative AI.
+					We offer expertise in web application development, structured authoring in XML, and XML transformations.
 				</h3>
-				<p className='text-left'>The digital landscape is in constant transformation. Users are currently shifting their attention from search engines to chatbots, seeking solutions providing minimal friction and which intuitively comprehend their needs.
-				</p>
-				<p className="text-left font-bold text-2xl">
-					We make your product ready for the age of AI:
-				</p>
-				<ul className='list-disc pl-8 pt-1 text-left flex flex-col gap-2'>
-					<li>Enhance your digital discoverability by integrating with the LLM systems your customers use today.</li>
-					<li>Offer to your customers an exceptional Conversational UI experience.</li>
-					<li>Stay competitive as new demands arise for products understanding user intuition.</li>
-				</ul>
+				<p className='text-left'>Our unique combination of technical documentation expertise and modern web development skills enables us to deliver integrated solutions that seamlessly connect your content management needs with cutting-edge application development.</p>
+	
 			</div>
 
 		</div>

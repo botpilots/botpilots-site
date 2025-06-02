@@ -7,14 +7,15 @@ const Services = (props: { className?: string }) => {
 			<div className="flex-1 flex-col space-y-4 min-w-[250px] ">
 				<p className='text-lg text-left'>We currently offer these services:</p>
 				<ul className='list-disc pl-8 pt-1 text-left'>
-					<li>Apple Intelligence Integrations</li>
-					<li>Custom MCP Server Creation</li>
-					<li>Conversational UI Development</li>
-					<li>Project Mangement in any of above</li>
-					<li>AI strategy in product development</li>
+					<li>Custom web app development (front end & backend)</li>
+					<li>Structured authoring in XML and DITA 2.0</li>
+					<li>XML CMS integration and migration</li>
+					<li>Technical documentation consultancy</li>
+					<li>Legacy documentation migration & transformation</li>
+					<li>Advice on advanced structured content techniques</li>
 				</ul>
-				<h4 className='italic font-bold text-left'>We are happy to discuss your enquiry! If you have any questions, please drop us an email using the button below.</h4>
-				<h5 className='italic text-left'>PS. Stay tuned for the release of our monthly newsletter, summarizing the newest advancements made in AI, as well as general recommendations for businessesss who wish to thrive in the AI era. Feel free to send me an email if you want to be on the early bird list.</h5>
+				<h4 className='italic font-bold text-left'>We're happy to discuss your needs! If you have any questions, please drop us an email using the button below.</h4>
+				<h5 className='italic text-left'>PS. Stay tuned for our upcoming newsletter, sharing the latest in structured content, XML, and technical documentation best practices. Email us if you'd like to be on the early bird list.</h5>
 			</div>
 
 			<img src={image} alt="Lines of code." className="flex-1 lg:max-w-[400px] border-8 border-double border-slate-700" />
