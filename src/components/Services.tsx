@@ -26,8 +26,7 @@ const Services = (props: { className?: string }) => {
 				<h3 className="text-2xl font-light text-left">
 					We offer expertise in web application development, structured authoring in XML, and XML transformations.
 				</h3>
-				<p className='text-left'>Our rare blend of technical documentation mastery and modern web development skills enables us to effectively realise our customers visions in how their content is written, managed ans consumed.</p>
-	
+				<p className='text-left'>Our rare blend of technical documentation mastery and modern web development skills enables us to effectively realise our customers visions in how their content is authored, managed and published.</p>
 			</div>
 
 		</div>
