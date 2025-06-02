@@ -1,6 +1,6 @@
 import AnimatedHeader from './AnimatedHeader';
 
-const BASE_TEXT = "Do you need expertise in ";
+const BASE_TEXT = "Looking for consultancy in  ";
 const WORDS = ["XML?", "DITA?", "CSS styling?", "TypeScript?", "RAG?", "Gen AI?", "migrations?", "frontend?", "backend?"];
 const TYPE_SPEED = 80;
 const BACKSPACE_SPEED = 40;
@@ -26,7 +26,7 @@ const Services = (props: { className?: string }) => {
 				<h3 className="text-2xl font-light text-left">
 					We offer expertise in web application development, structured authoring in XML, and XML transformations.
 				</h3>
-				<p className='text-left'>Our unique combination of technical documentation expertise and modern web development skills enables us to deliver integrated solutions that seamlessly connect your content management needs with cutting-edge application development.</p>
+				<p className='text-left'>Our rare blend of technical documentation mastery and modern web development skills enables us to effectively realise our customers visions in how their content is written, managed ans consumed.</p>
 	
 			</div>
 
