@@ -126,7 +126,7 @@ const ScrollNotifier: React.FC<ScrollNotifierProps> = ({ direction }) => {
       const isMobile = window.innerWidth < 640;
       const snapItems = isMobile 
         ? currentSection.querySelectorAll(':scope > div')
-        : currentSection.querySelectorAll(':scope > div.snap-center, :scope > div.snap-start');
+        : currentSection.querySelectorAll(':scope > div.sm\\:snap-center, :scope > div.sm\\:snap-start');
       if (snapItems.length <= 1) {
         setCanScroll(false);
         return;
