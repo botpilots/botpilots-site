@@ -1,7 +1,7 @@
 import AnimatedHeader from './AnimatedHeader';
 
 const BASE_TEXT = "Looking for consultancy in  ";
-const WORDS = ["XML?", "DITA?", "CSS styling?", "TypeScript?", "RAG?", "Gen AI?", "migrations?", "frontend?", "backend?"];
+const WORDS = ["XML?", "DITA?", "CSS styling?", "TypeScript?", "Java?", "RAG?", "Gen AI?", "migrations?", "frontend?", "backend?"];
 const TYPE_SPEED = 80;
 const BACKSPACE_SPEED = 40;
 const WORD_PAUSE = 3000;
