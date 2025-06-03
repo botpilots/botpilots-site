@@ -9,7 +9,7 @@ const Services = (props: { className?: string }) => {
 				<ul className='list-disc pl-8 pt-1 text-left'>
 					<li>Robust web app development, both frontend (TypeScript) & backend (Java)</li>
 					<li>Technical authoring consultancy</li>
-					<li>Web publishing of XML content</li> 
+					<li>Web publishing of XML content</li>
 					<li>Migration to structured content (DITA, XML, etc.)</li>
 					<li>Advice on advanced structured content techniques using XML and DITA</li>
 				</ul>
