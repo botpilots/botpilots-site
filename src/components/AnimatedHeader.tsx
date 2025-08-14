@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, CSSProperties } from 'react';
 
 interface AnimatedHeaderProps {
 	baseText: string;
@@ -8,6 +8,7 @@ interface AnimatedHeaderProps {
 	wordPause?: number;
 	breakpoint?: number;
 	className?: string;
+	style?: CSSProperties;
 }
 
 const AnimatedHeader = ({
@@ -18,6 +19,7 @@ const AnimatedHeader = ({
 	wordPause = 3000,
 	breakpoint = 650,
 	className = '',
+	style,
 }: AnimatedHeaderProps) => {
 	const [displayed, setDisplayed] = useState('');
 	const [windowWidth, setWindowWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 1000);
@@ -81,7 +83,7 @@ const AnimatedHeader = ({
 	// }, [windowWidth, baseStart, baseEnd, displayed, breakpoint]);
 
 	return (
-		<h3 className={`text-4xl font-bold text-left ${className}`}>
+		<h3 className={`text-4xl font-bold text-left ${className}`} style={style}>
 			{baseStart}
 			{windowWidth < breakpoint && <br />}
 			<span className=''>

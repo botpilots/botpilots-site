@@ -161,3 +161,18 @@ html {
 		animation-fill-mode: forwards; /* Keep the state of the last keyframe */
 		opacity: 0; /* Start as invisible */
 	  }
+
+	  @keyframes simpleFadeIn {
+		from {
+		  opacity: 0;
+		}
+		to {
+		  opacity: 1;
+		}
+	  }
+	  
+	  .simple-fade-in {
+		animation-name: simpleFadeIn;
+		animation-fill-mode: forwards;
+		opacity: 0;
+	  }

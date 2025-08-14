@@ -17,18 +17,23 @@ const Services = (props: { className?: string }) => {
 
 			<div className="flex-1 flex-col space-y-4 min-w-250px">
 				<AnimatedHeader
+					className='simple-fade-in'
+					style={{ animationDuration: '0.5s', animationDelay: '0s' }}
 					baseText={BASE_TEXT}
 					words={WORDS}
 					typeSpeed={TYPE_SPEED}
 					backspaceSpeed={BACKSPACE_SPEED}
 					wordPause={WORD_PAUSE}
 				/>
-				<h3 className="text-2xl font-light text-left">
-				With a rare to find expertise in both AI, XML and fullstack, we offer innovative services and consultancy to businesses working with technical documentation.
+				<h3 
+					className="text-2xl font-light text-left simple-fade-in"
+					style={{ animationDuration: '1s', animationDelay: '2s' }}
+				>
+					With a rare to find expertise in both AI, XML and fullstack, we offer innovative services and consultancy to businesses working with technical documentation.
 				</h3>
 				<p 
 					className='text-left fade-in'
-					style={{ animationDuration: '1s', animationDelay: '3s' }}
+					style={{ animationDuration: '1s', animationDelay: '6s' }}
 				>
 					To learn more - scroll, swipe or press an arrow.
 				</p>
