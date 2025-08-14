@@ -26,8 +26,8 @@ const About = (props: { className?: string }) => {
 				<p className='text-left'>
 					At BotPilots, we believe Generative AI shouldn’t replace human ingenuity, but augment it. Its role is to handle the meticulous, costly, and time-consuming task of keeping product information perfectly accurate and up-to-date.</p>
 
-				<p className='text-left'>
-					Our human minds are not to be reduced to cogs of industry, but should remain engines of creativity. By delegating the details to AI, we can redirect the human mind away from repetitive tasks and towards what it does best: creating a more human-oriented future.</p>
+				{/* <p className='text-left'>
+					Our human minds are not to be reduced to cogs of industry, but should remain engines of creativity. By delegating the details to AI, we can redirect the human mind away from repetitive tasks and towards what it does best: creating a more human-oriented future.</p> */}
 
 
 				<p className='text-left'>
