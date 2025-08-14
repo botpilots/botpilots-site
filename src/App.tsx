@@ -47,7 +47,7 @@ function App() {
 					{menuTypes.map((fragment) => (
 						<li key={fragment}>
 							<a href={`#${fragment}`}
-								className={`transition-colors hover:text-[#204a87] cursor-pointer ${currentHash === `#${fragment}` && 'text-[#204a87]'
+								className={`transition-colors hover:text-[#b9d5ff] cursor-pointer text-[#204a87] ${currentHash === `#${fragment}` && 'text-[#b9d5ff]'
 									}`}
 							>
 								{fragment.replace(/-/g, ' ')}
