@@ -19,6 +19,7 @@ const Services = (props: { className?: string }) => {
 				<AnimatedHeader
 					className='simple-fade-in'
 					style={{ animationDuration: '0.5s', animationDelay: '0s' }}
+					animationDelay={8000}
 					baseText={BASE_TEXT}
 					words={WORDS}
 					typeSpeed={TYPE_SPEED}

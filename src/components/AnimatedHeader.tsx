@@ -9,6 +9,7 @@ interface AnimatedHeaderProps {
 	breakpoint?: number;
 	className?: string;
 	style?: CSSProperties;
+	animationDelay?: number;
 }
 
 const AnimatedHeader = ({
@@ -20,8 +21,9 @@ const AnimatedHeader = ({
 	breakpoint = 650,
 	className = '',
 	style,
+	animationDelay = 0,
 }: AnimatedHeaderProps) => {
-	const [displayed, setDisplayed] = useState('');
+	const [displayed, setDisplayed] = useState(words[0] || '');
 	const [windowWidth, setWindowWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 1000);
 
 	useEffect(() => {
@@ -56,6 +58,11 @@ const AnimatedHeader = ({
 
 		const runTypewriter = async () => {
 			let wordIndex = 0;
+			// Initially backspace the first word that is pre-displayed
+			await backspaceWord(words[wordIndex]);
+			await new Promise(res => setTimeout(res, 300));
+			wordIndex = (wordIndex + 1) % words.length;
+
 			while (!isCancelled) {
 				const word = words[wordIndex];
 				await typeWord(word);
@@ -66,10 +73,15 @@ const AnimatedHeader = ({
 			}
 		};
 
-		runTypewriter();
+		const timer = setTimeout(() => {
+			runTypewriter();
+		}, animationDelay);
 
-		return () => { isCancelled = true; };
-	}, [words, typeSpeed, backspaceSpeed, wordPause]);
+		return () => { 
+			isCancelled = true;
+			clearTimeout(timer);
+		};
+	}, [words, typeSpeed, backspaceSpeed, wordPause, animationDelay]);
 
 	// Logging logic (debug)
 	// useEffect(() => {
