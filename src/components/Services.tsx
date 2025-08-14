@@ -1,7 +1,7 @@
 import AnimatedHeader from './AnimatedHeader';
 
 const BASE_TEXT = "Looking for consultancy in  ";
-const WORDS = ["XML?", "DITA?", "CSS styling?", "TypeScript?", "Java?", "RAG?", "Gen AI?", "migrations?", "frontend?", "backend?"];
+const WORDS = ["GenAI?", "XML?", "frontend?", "backend?"];
 const TYPE_SPEED = 80;
 const BACKSPACE_SPEED = 40;
 const WORD_PAUSE = 3000;
@@ -24,9 +24,9 @@ const Services = (props: { className?: string }) => {
 					wordPause={WORD_PAUSE}
 				/>
 				<h3 className="text-2xl font-light text-left">
-					We offer expertise in web application development, structured authoring in XML, and XML transformations.
+				Focusing on businesses working with technical documentation, we offer digital services and consultancy with a rare to find expertise in Agentic GenAI, XML transformations and fullstack development.
 				</h3>
-				<p className='text-left'>Our rare blend of technical documentation expertise and modern web development skills enables us to effectively realise our customers visions in how their content is authored, managed and published.</p>
+				<p className='text-left'>To learn more - swipe, scroll or press an arrow.</p>
 			</div>
 
 		</div>
