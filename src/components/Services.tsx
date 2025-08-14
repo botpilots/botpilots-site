@@ -25,11 +25,25 @@ const Services = (props: { className?: string }) => {
 					backspaceSpeed={BACKSPACE_SPEED}
 					wordPause={WORD_PAUSE}
 				/>
-				<h3 
-					className="text-2xl font-light text-left simple-fade-in"
-					style={{ animationDuration: '1s', animationDelay: '2s' }}
-				>
-					With a rare to find expertise in both AI, XML and fullstack, we offer innovative services and consultancy to businesses working with technical documentation.
+				<h3 className="text-2xl font-light text-left">
+					<span
+						className="simple-fade-in"
+						style={{ animationDuration: '1s', animationDelay: '1s' }}
+					>
+						With a rare to find expertise in both AI, XML and fullstack,{' '}
+					</span>
+					<span
+						className="simple-fade-in"
+						style={{ animationDuration: '1s', animationDelay: '1.7s' }}
+					>
+						we offer innovative services and consultancy{' '}
+					</span>
+					<span
+						className="simple-fade-in"
+						style={{ animationDuration: '1s', animationDelay: '2.4s' }}
+					>
+						to businesses working with technical documentation.
+					</span>
 				</h3>
 				<p 
 					className='text-left fade-in'
