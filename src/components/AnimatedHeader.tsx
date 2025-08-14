@@ -25,6 +25,8 @@ const AnimatedHeader = ({
 }: AnimatedHeaderProps) => {
 	const [displayed, setDisplayed] = useState(words[0] || '');
 	const [windowWidth, setWindowWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 1000);
+	const [showCursor, setShowCursor] = useState(false);
+	const [cursorClass, setCursorClass] = useState('simple-fade-in');
 
 	useEffect(() => {
 		const handleResize = () => setWindowWidth(window.innerWidth);
@@ -73,13 +75,23 @@ const AnimatedHeader = ({
 			}
 		};
 
-		const timer = setTimeout(() => {
-			runTypewriter();
+		let typewriterTimer: NodeJS.Timeout;
+		const animationStartTimer = setTimeout(() => {
+			if (isCancelled) return;
+			setShowCursor(true);
+			
+			typewriterTimer = setTimeout(() => {
+				if (isCancelled) return;
+				runTypewriter();
+			}, 500); // Wait for cursor to fade in
 		}, animationDelay);
 
 		return () => { 
 			isCancelled = true;
-			clearTimeout(timer);
+			clearTimeout(animationStartTimer);
+            if (typewriterTimer) {
+			    clearTimeout(typewriterTimer);
+            }
 		};
 	}, [words, typeSpeed, backspaceSpeed, wordPause, animationDelay]);
 
@@ -102,7 +114,17 @@ const AnimatedHeader = ({
 				{baseEnd}
 			</span>
 			{displayed}
-			<span className="animate-pulse">|</span>
+			{showCursor && (
+				<span
+					className={cursorClass}
+					style={cursorClass === 'simple-fade-in' ? { animationDuration: '0.5s' } : undefined}
+					onAnimationEnd={() => {
+						if (cursorClass === 'simple-fade-in') {
+							setCursorClass('animate-pulse');
+						}
+					}}
+				>|</span>
+			)}
 		</h3>
 	);
 };
