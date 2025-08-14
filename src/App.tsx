@@ -67,30 +67,30 @@ function App() {
 					// div container all horizontal sections with nested vertical snap scrolling
 					<div ref={scrollContainerRef} className="flex h-full w-screen overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
 						<section id="services" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll sm:snap-y sm:snap-mandatory hide-scrollbar p-6 mobile-scroll-section">
-							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[850px]">
 								<Services />
 							</div>
-							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[850px]">
 								<Services2 />
 							</div>
 						</section>
 						<section id="about" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll sm:snap-y sm:snap-mandatory hide-scrollbar p-6 mobile-scroll-section">
-							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center mb-6 [&>*]:max-w-[850px]">
 								<About />
 							</div>
 						</section>
 						<section id="cases" className="snap-center flex-shrink-0 w-screen flex flex-col sm:items-center items-start justify-start overflow-y-scroll sm:snap-y sm:snap-mandatory hide-scrollbar p-6 mobile-scroll-section">
 							{/* Extra margin on mobile (300px) needed for scroll arrow buttons to properly detect and navigate between different case study sections */}
-							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center sm:mb-6 mb-[300px] [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center sm:mb-6 mb-[300px] [&>*]:max-w-[850px]">
 								<Cases />
 							</div>
-							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[850px]">
 								<Simonsoft />
 							</div>
-							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[850px]">
 								<PDSVISION />
 							</div>
-							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[800px]">
+							<div className="sm:snap-center sm:flex-shrink-0 sm:min-h-full min-h-fit w-full flex sm:items-center items-start justify-center [&>*]:max-w-[850px]">
 								<YouNext />
 							</div>
 						</section>
