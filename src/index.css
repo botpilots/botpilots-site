@@ -144,3 +144,20 @@ html {
 		50% { transform: skewX(20deg); }
 		100% { transform: skewX(0deg); }
 	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	  
+	  .fade-in {
+		animation-name: fadeIn;
+		animation-fill-mode: forwards; /* Keep the state of the last keyframe */
+		opacity: 0; /* Start as invisible */
+	  }

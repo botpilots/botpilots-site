@@ -24,9 +24,14 @@ const Services = (props: { className?: string }) => {
 					wordPause={WORD_PAUSE}
 				/>
 				<h3 className="text-2xl font-light text-left">
-				Focusing on businesses working with technical documentation, we offer digital services and consultancy with a rare to find expertise in Agentic GenAI, XML transformations and fullstack development.
+				With a rare to find expertise in both AI, XML and fullstack, we offer innovative services and consultancy to businesses working with technical documentation.
 				</h3>
-				<p className='text-left'>To learn more - swipe, scroll or press an arrow.</p>
+				<p 
+					className='text-left fade-in'
+					style={{ animationDuration: '1s', animationDelay: '3s' }}
+				>
+					To learn more - scroll, swipe or press an arrow.
+				</p>
 			</div>
 
 		</div>
