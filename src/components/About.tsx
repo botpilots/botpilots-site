@@ -13,18 +13,22 @@ const About = (props: { className?: string }) => {
 			<div className="py-2 min-w-[250px] space-y-2">
 				<h2 className='text-4xl font-bold py-2 text-left'>About</h2>
 
-				<p className='text-left'>
-					Hello, I'm Oskar. I founded BotPilots as I am passionate about helping businesses create innovative, disruptive, and useful products and services. Always having been interested in technology, I graduated in 2019 with a BSc in Innovation Engineering in Product Development and Innovation Management.
-				</p>
-
-
-				<p className='text-left'>
-					In my professional life, I seek to master the systems I act in, to be able to be an agent of change and provide guidance to my peers. I have been working professionally with software development since 2023 and with technical documentation since 2021.
+				<p className="text-left">
+					Hello, I'm Oskar. I have since 2021 been working professionally with technical documentation in different roles, both operationally as a technical author but mostly "under the hood" as an employed and self-employed software developer.
 				</p>
 
 				<p className='text-left'>
-					The digital space is buzzing with excitement for advancing the value-creation of current products. Developers responsible for both physical and digital products are currently in a unique position to get ahead of the competition. New technologies are pushing the boundaries of value creation, while new customer expectations drive the market.
+					Convinced that a small business can deliver exceptional value today, it combining AI-driven business operations with a broad domain expertise, I took the decision to found BotPilots in 2025 with one mission in mind - <b>to innovate</b>.
 				</p>
+				<p className='text-left'>
+					Today, AI offers a significant competitive advantage to businesses with both physical and digital products. This is especially true for technical documentation—an industry poised for transformative cost savings and efficiency gains.</p>
+
+				<p className='text-left'>
+					At BotPilots, we believe Generative AI shouldn’t replace human ingenuity, but augment it. Its role is to handle the meticulous, costly, and time-consuming task of keeping product information perfectly accurate and up-to-date.</p>
+
+				<p className='text-left'>
+					Our human minds are not to be reduced to cogs of industry, but should remain engines of creativity. By delegating the details to AI, we can redirect the human mind away from repetitive tasks and towards what it does best: creating a more human-oriented future.</p>
+
 
 				<p className='text-left'>
 					With the greatest anticipation to turn your product or content visions into reality!
