@@ -18,13 +18,13 @@ const About = (props: { className?: string }) => {
 				</p>
 
 				<p className='text-left'>
-					Convinced that a small business can deliver exceptional value today, it combining AI-driven business operations with a broad domain expertise, I took the decision to found BotPilots in 2025 with one mission in mind - <b>to innovate</b>.
+					Convinced that a small business can deliver exceptional value today, it combining AI-driven business operations with domain expertise, I took the decision to found BotPilots in 2025 with one mission in mind - <b>to innovate</b>.
 				</p>
 				<p className='text-left'>
-					Today, AI offers a significant competitive advantage to businesses with both physical and digital products. This is especially true for technical documentation—an industry poised for transformative cost savings and efficiency gains.</p>
+					Today, AI offers a significant competitive advantage to businesses developing both physical and digital products. This is especially true for technical documentation—an industry poised for transformative cost savings and efficiency gains.</p>
 
 				<p className='text-left'>
-					At BotPilots, we believe Generative AI shouldn’t replace human ingenuity, but augment it. Its role is to handle the meticulous, costly, and time-consuming task of keeping product information perfectly accurate and up-to-date.</p>
+					At BotPilots, we believe Generative AI shouldn’t replace human ingenuity, but augment it. Its role is to handle the meticulous but all-important task of keeping product information perfectly accurate and up-to-date. While humans remain the origin of content, AI enhances, mediates and validates it - reassuring its quality while reducing delivery times and costs.</p>
 
 				{/* <p className='text-left'>
 					Our human minds are not to be reduced to cogs of industry, but should remain engines of creativity. By delegating the details to AI, we can redirect the human mind away from repetitive tasks and towards what it does best: creating a more human-oriented future.</p> */}
