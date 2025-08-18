@@ -31,7 +31,7 @@ const About = (props: { className?: string }) => {
 
 
 				<p className='text-left'>
-					With the greatest anticipation to turn your product or content visions into reality!
+					With the greatest anticipation to create great content together,
 				</p>
 
 				<div className="text-left py-2">
