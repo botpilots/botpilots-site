@@ -1,14 +1,19 @@
 {
 	"name": "botpilots-website",
 	"private": true,
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"scripts": {
 		"dev": "tsc -b && vite",
 		"build": "tsc -b && vite build",
 		"lint": "eslint .",
 		"preview": "vite preview",
-		"test": "tsc -b && node --test"
+		"test": "tsc -b && node --test",
+		"release": "bash scripts/release.sh",
+		"release:patch": "bash scripts/release.sh patch",
+		"release:minor": "bash scripts/release.sh minor",
+		"release:major": "bash scripts/release.sh major",
+		"release:tag": "bash scripts/release.sh tag"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.0",
