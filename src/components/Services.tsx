@@ -1,7 +1,7 @@
 import AnimatedHeader from './AnimatedHeader';
 
 const BASE_TEXT = "Looking for consultancy in  ";
-const WORDS = ["GenAI?", "XML?", "frontend?", "backend?", "AI translations?", "AI validations?"];
+const WORDS = ["GenAI?", "LLM translations?", "XML?", "fullstack?"];
 const TYPE_SPEED = 100;
 const BACKSPACE_SPEED = 80;
 const WORD_PAUSE = 3000;
@@ -37,7 +37,7 @@ const Services = (props: { className?: string }) => {
 						className="simple-fade-in"
 						style={{ animationDuration: '1s', animationDelay: '4s' }}
 					>
-						we offer innovative services and consultancy{' '}
+						BotPilots offers innovative services {' '}
 					</span>
 					<span
 						className="simple-fade-in"
